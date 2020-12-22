@@ -15,13 +15,13 @@ from kivy.graphics import Color, Rectangle
 import RPi.GPIO as GPIO
 
 #for now, use a global for blink speed (better implementation TBD):
-speed = 1.0
+speed = 0.5
 
 # Set up GPIO:
 beepPin = 17
 ledPin = 27
-buttonPin = 22
-flashLedPin = 10
+buttonPin =9 
+flashLedPin =13
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(beepPin, GPIO.OUT)
 GPIO.output(beepPin, GPIO.LOW)
