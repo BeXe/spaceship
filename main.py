@@ -1,5 +1,8 @@
 ### FROM https://github.com/mrichardson23/rpi-kivy-screen/blob/master/main.py
-
+import time
+import board
+import busio
+from adafruit_ht16k33 import segments
 import kivy
 kivy.require('1.1.0') # replace with your current kivy version !
 
@@ -13,7 +16,19 @@ from kivy.clock import Clock
 from kivy.graphics import Color, Rectangle
 
 import RPi.GPIO as GPIO
+import time
+import board
+import busio
+from adafruit_ht16k33 import segments
 
+# Create the I2C interface.
+i2c = busio.I2C(board.SCL, board.SDA)
+
+# Create the LED segment class.
+# This creates a 7 segment 4 character display:
+display = segments.Seg7x4(i2c)
+
+time.sleep(2)
 #for now, use a global for blink speed (better implementation TBD):
 speed = 0.5
 
@@ -21,7 +36,7 @@ speed = 0.5
 beepPin = 17
 ledPin = 27
 buttonPin =9 
-flashLedPin =13
+flashLedPin =14
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(beepPin, GPIO.OUT)
 GPIO.output(beepPin, GPIO.LOW)
@@ -72,7 +87,12 @@ class InputButton(Button):
 			self.state = 'normal'
 		else:
 			self.state = 'down'
-
+			for i in range(10, -1, -1):
+				print('{num:06d}'.format(num=i))
+				display.fill(0)
+				display.print(':')
+				display.print('{num:06d}'.format(num=i))
+				time.sleep(1)
 class MyApp(App):
 
 	def build(self):
