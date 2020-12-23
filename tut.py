@@ -25,8 +25,8 @@ LED6=22
 LED7=27
 LED8=17
 LED9=13
-LED10=6
-LED11=5
+LED10=5
+LED11=6
 #LED12=
 
 GPIO.setup(button1,GPIO.IN,pull_up_down=GPIO.PUD_UP) # Make button1 an input, Activate Pull UP Resistor
@@ -109,7 +109,7 @@ while(1):                  # Create an infinite Loop
                         GPIO.output(LED4,False)
                         BS4=False
                         sleep(.5)
-        if GPIO.input(button4)==0: #Repeat above for LED 4 and button 4
+        if GPIO.input(button5)==0: #Repeat above for LED 4 and button 4
                 print ("Button 5 Was Pressed:")
                 if BS5==False:
                         GPIO.output(LED5,True)
