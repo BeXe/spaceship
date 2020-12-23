@@ -11,8 +11,8 @@ button5=25
 button6=8
 button7=7
 button8=1
-button9=16
-button10=20
+button9=20
+button10=16
 button11=21
 #button12=
 
@@ -25,8 +25,8 @@ LED6=22
 LED7=27
 LED8=17
 LED9=13
-LED10=5
-LED11=6
+LED10=6
+LED11=5
 #LED12=
 
 GPIO.setup(button1,GPIO.IN,pull_up_down=GPIO.PUD_UP) # Make button1 an input, Activate Pull UP Resistor
