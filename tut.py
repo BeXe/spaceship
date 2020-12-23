@@ -3,6 +3,18 @@ import RPi.GPIO as GPIO    # Import GPIO Library
 #GPIO.setmode(GPIO.BOARD)   # Use Physical Pin Numbering Scheme
 GPIO.setmode(GPIO.BCM)
 
+import time
+import board
+import busio
+from adafruit_ht16k33 import segments
+
+# Create the I2C interface.
+i2c = busio.I2C(board.SCL, board.SDA)
+
+# Create the LED segment class.
+# This creates a 7 segment 4 character display:
+display = segments.Seg7x4(i2c)
+
 button1=9                 # Button 1 is connected to physical pin 16
 button2=11                 # Button 2 is connected to physical pin 12
 button3=19
@@ -75,6 +87,14 @@ while(1):                  # Create an infinite Loop
                         GPIO.output(LED1,True) # turn it on
                         BS1=True              # Set Flag to show LED1 is now On 
                         sleep(.5)             # Delay
+                        time.sleep(2)
+
+                        for i in range(10, -1, -1):
+                           print('{num:06d}'.format(num=i))
+                           display.fill(0)
+                           display.print(':')
+                           display.print('{num:06d}'.format(num=i))
+                           time.sleep(1)
                 else:                         # If the LED is on
                         GPIO.output(LED1,False) # Turn LED off
                         BS1=False               # Set Flag to show LED1 is now Off
