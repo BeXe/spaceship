@@ -3,10 +3,16 @@ import RPi.GPIO as GPIO    # Import GPIO Library
 #GPIO.setmode(GPIO.BOARD)   # Use Physical Pin Numbering Scheme
 GPIO.setmode(GPIO.BCM)
 
+# FOR 7 Segment display
 import time
 import board
 import busio
 from adafruit_ht16k33 import segments
+
+# FOR VIDEO
+import os
+import sys
+from subprocess import Popen
 
 # Create the I2C interface.
 i2c = busio.I2C(board.SCL, board.SDA)
@@ -15,6 +21,8 @@ i2c = busio.I2C(board.SCL, board.SDA)
 # This creates a 7 segment 4 character display:
 display = segments.Seg7x4(i2c)
 
+
+# Button Variables connected to which GPIO pin.
 button1=9                 # Button 1 is connected to physical pin 16
 button2=11                 # Button 2 is connected to physical pin 12
 button3=19
@@ -28,6 +36,7 @@ button10=16
 button11=21
 #button12=
 
+# Led variables, connected tot which GPIO pin
 LED1=24                    # LED 1 is connected to physical pin 22
 LED2=23                    # LED 2 is connected to physical pin 18
 LED3=18
@@ -40,6 +49,21 @@ LED9=13
 LED10=6
 LED11=5
 #LED12=
+
+# Movie Variables (set where movie lives)
+movie1 = ("/home/pi/movie/aurora.mp4")
+movie2 = ("/home/pi/Videos/movie2.mp4")
+
+# last state variable
+# last_state1 = True
+# last_state2 = True
+
+# 
+# input_state1 = True
+# input_state2 = True
+# quit_video = True
+
+# player = False
 
 GPIO.setup(button1,GPIO.IN,pull_up_down=GPIO.PUD_UP) # Make button1 an input, Activate Pull UP Resistor
 GPIO.setup(button2,GPIO.IN,pull_up_down=GPIO.PUD_UP) # Make button 2 an input, Activate Pull Up Resistor
@@ -95,6 +119,10 @@ while(1):                  # Create an infinite Loop
                            display.print(':')
                            display.print('{num:06d}'.format(num=i))
                            time.sleep(1)
+                        
+                        os.system('killall omxplayer.bin')
+                        omxc = Popen(['omxplayer', '-b', movie1])
+                        
                 else:                         # If the LED is on
                         GPIO.output(LED1,False) # Turn LED off
                         BS1=False               # Set Flag to show LED1 is now Off
