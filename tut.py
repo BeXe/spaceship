@@ -109,5 +109,83 @@ while(1):                  # Create an infinite Loop
                         GPIO.output(LED4,False)
                         BS4=False
                         sleep(.5)
-
-
+        if GPIO.input(button4)==0: #Repeat above for LED 4 and button 4
+                print ("Button 5 Was Pressed:")
+                if BS5==False:
+                        GPIO.output(LED5,True)
+                        BS5=True
+                        sleep(.5)
+                else:
+                        GPIO.output(LED5,False)
+                        BS5=False
+                        sleep(.5)
+        if GPIO.input(button6)==0: #Repeat above for LED 4 and button 4
+                print ("Button 6 Was Pressed:")
+                if BS6==False:
+                        GPIO.output(LED6,True)
+                        BS6=True
+                        sleep(.5)
+                else:
+                        GPIO.output(LED6,False)
+                        BS6=False
+                        sleep(.5)
+        if GPIO.input(button7)==0: #Repeat above for LED 4 and button 4
+                print ("Button 7 Was Pressed:")
+                if BS7==False:
+                        GPIO.output(LED7,True)
+                        BS7=True
+                        sleep(.5)
+                else:
+                        GPIO.output(LED7,False)
+                        BS7=False
+                        sleep(.5)
+        if GPIO.input(button8)==0: #Repeat above for LED 4 and button 4
+                print ("Button 8 Was Pressed:")
+                if BS8==False:
+                        GPIO.output(LED8,True)
+                        BS8=True
+                        sleep(.5)
+                else:
+                        GPIO.output(LED8,False)
+                        BS8=False
+                        sleep(.5)
+        if GPIO.input(button9)==0: #Repeat above for LED 4 and button 4
+                print ("Button 9 Was Pressed:")
+                if BS9==False:
+                        GPIO.output(LED9,True)
+                        BS9=True
+                        sleep(.5)
+                else:
+                        GPIO.output(LED9,False)
+                        BS9=False
+                        sleep(.5)
+        if GPIO.input(button10)==0: #Repeat above for LED 4 and button 4
+                print ("Button 10 Was Pressed:")
+                if BS10==False:
+                        GPIO.output(LED10,True)
+                        BS10=True
+                        sleep(.5)
+                else:
+                        GPIO.output(LED10,False)
+                        BS10=False
+                        sleep(.5)
+        if GPIO.input(button11)==0: #Repeat above for LED 4 and button 4
+                print ("Button 11 Was Pressed:")
+                if BS11==False:
+                        GPIO.output(LED11,True)
+                        BS11=True
+                        sleep(.5)
+                else:
+                        GPIO.output(LED11,False)
+                        BS11=False
+                        sleep(.5)
+        if GPIO.input(button12)==0: #Repeat above for LED 4 and button 4
+                print ("Button 12 Was Pressed:")
+                if BS12==False:
+                        GPIO.output(LED12,True)
+                        BS12=True
+                        sleep(.5)
+                else:
+                        GPIO.output(LED12,False)
+                        BS12=False
+                        sleep(.5)
