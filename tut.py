@@ -116,7 +116,7 @@ while(1):                  # Create an infinite Loop
                         for i in range(10, -1, -1):
                            print('{num:06d}'.format(num=i))
                            display.fill(0)
-                           diay.print(':')
+                           display.print(':')
                            display.print('{num:06d}'.format(num=i))
                            time.sleep(1)                         
                 else:                         # If the LED is on
