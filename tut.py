@@ -54,6 +54,8 @@ LED11=5
 movie1 = ("/home/pi/movie/aurora.mp4")
 movie2 = ("/home/pi/Videos/movie2.mp4")
 
+m1=False
+
 # last state variable
 # last_state1 = True
 # last_state2 = True
@@ -110,6 +112,7 @@ while(1):                  # Create an infinite Loop
                 if BS1==False:                # If the LED is off
                         GPIO.output(LED1,True) # turn it on
                         BS1=True              # Set Flag to show LED1 is now On 
+                        m1=True
                         sleep(.5)             # Delay
                         time.sleep(2)
 
@@ -122,17 +125,17 @@ while(1):                  # Create an infinite Loop
                 else:                         # If the LED is on
                         GPIO.output(LED1,False) # Turn LED off
                         BS1=False               # Set Flag to show LED1 is now Off
+                        m1=False
                         sleep(.5)
-        if GPIO.input(button1)==0:            # Look for button 1 press
+        if m1=True:            # Look for button 1 press
                 print ("Play movie")
-                if BS1==True:                # If the LED is on
-                        os.system('killall omxplayer.bin')
-                        omxc = Popen(['omxplayer', '-b', movie1])
-                        sleep(.5)             # Delay
-                        time.sleep(2)
-                elif not True:                         # If the LED is on
-                        os.system('killall omxplayer.bin')
-                        sleep(.5)
+                os.system('killall omxplayer.bin')
+                omxc = Popen(['omxplayer', '-b', movie1])
+                sleep(.5)             # Delay
+                time.sleep(2)
+        elif not True:                         # If the LED is on
+                os.system('killall omxplayer.bin')
+                sleep(.5)
         if GPIO.input(button2)==0: #Repeat above for LED 2 and button 2
                 print ("Button 2 Was Pressed:")
                 if BS2==False:
