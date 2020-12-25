@@ -131,7 +131,7 @@ while(1):                  # Create an infinite Loop
                         sleep(.5)             # Delay
                         time.sleep(2)
                 else:                         # If the LED is on
-                        if BS1==False:                # If the LED is on
+                if BS1==False:                # If the LED is on
                         os.system('killall omxplayer.bin')
                         sleep(.5)
         if GPIO.input(button2)==0: #Repeat above for LED 2 and button 2
