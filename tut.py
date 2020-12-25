@@ -127,6 +127,24 @@ while(1):                  # Create an infinite Loop
                         GPIO.output(LED1,False) # Turn LED off
                         BS1=False               # Set Flag to show LED1 is now Off
                         sleep(.5)
+         if GPIO.input(button1)==0:            # Look for button 1 press
+                print ("Play movie")
+                if BS1==True:                # If the LED is on
+                        os.system('killall omxplayer.bin')
+                        omxc = Popen(['omxplayer', '-b', movie1])
+                        sleep(.5)             # Delay
+                        time.sleep(2)
+
+                                          
+                        
+                        
+                else:                         # If the LED is on
+                        GPIO.output(LED1,False) # Turn LED off
+                        BS1=False               # Set Flag to show LED1 is now Off
+                        sleep(.5)                
+                        
+                        
+                        
         if GPIO.input(button2)==0: #Repeat above for LED 2 and button 2
                 print ("Button 2 Was Pressed:")
                 if BS2==False:
