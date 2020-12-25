@@ -116,7 +116,7 @@ while(1):                  # Create an infinite Loop
                         for i in range(10, -1, -1):
                            print('{num:06d}'.format(num=i))
                            display.fill(0)
-                           display.print(':')
+                           diay.print(':')
                            display.print('{num:06d}'.format(num=i))
                            time.sleep(1)                         
                 else:                         # If the LED is on
@@ -130,8 +130,7 @@ while(1):                  # Create an infinite Loop
                         omxc = Popen(['omxplayer', '-b', movie1])
                         sleep(.5)             # Delay
                         time.sleep(2)
-                else:                         # If the LED is on
-                if BS1==False:                # If the LED is on
+                elif not True:                         # If the LED is on
                         os.system('killall omxplayer.bin')
                         sleep(.5)
         if GPIO.input(button2)==0: #Repeat above for LED 2 and button 2
