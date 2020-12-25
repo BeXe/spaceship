@@ -127,7 +127,7 @@ while(1):                  # Create an infinite Loop
                         BS1=False               # Set Flag to show LED1 is now Off
                         m1=False
                         sleep(.5)
-        if m1=True:            # Look for button 1 press
+        if m1==True:            # Look for button 1 press
                 print ("Play movie")
                 os.system('killall omxplayer.bin')
                 omxc = Popen(['omxplayer', '-b', movie1])
