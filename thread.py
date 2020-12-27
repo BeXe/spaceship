@@ -122,9 +122,9 @@ countdown_thread.start
                                 
 while(1):                  # Create an infinite Loop
         if GPIO.input(button1)==0:            # Look for button 1 press
-                global my_timer
                 print ("Button 1 Was Pressed:")
                 if BS1==False:                # If the LED is off
+                        global my_timer
                         GPIO.output(LED1,True) # turn it on
                         BS1=True              # Set Flag to show LED1 is now On 
                         m1=True
