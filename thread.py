@@ -115,7 +115,7 @@ def countdown():
         my_timer = 10
         for i in range(10):
                 my_timer = my_timer -1
-                   print('{num:06d}'.format(num=i))
+                print('{num:06d}'.format(num=i))
                            display.fill(0)
                            display.print(':')
                            display.print('{num:06d}'.format(num=i))
