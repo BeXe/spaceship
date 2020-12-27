@@ -125,6 +125,7 @@ def countdown():
                            time.sleep(1)              
 
 countdown_thread = threading.Thread(target = countdown)
+countdown_thread.start
                                
                                 
 while(1):                  # Create an infinite Loop
