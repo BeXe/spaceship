@@ -109,22 +109,35 @@ BS10=False                  # Set Flag BS2 to indicate LED is initially off
 BS11=False                  # Set Flag BS3 to indicate LED is initially off
 #BS12=False                  # Set Flag BS4 to indicate LED is initially off
 
+
+def countdown():
+#        global my_timer
+#        my_timer = 10
+#        for x in range(10):
+#                my_timer = my_timer -1
+#                sleep(1)
+
+for i in range(10, -1, -1):
+                           print('{num:06d}'.format(num=i))
+                           display.fill(0)
+                           display.print(':')
+                           display.print('{num:06d}'.format(num=i))
+                           time.sleep(1)              
+countdown_thread = threading.Thread(target = countdown)
+                               
+                                
 while(1):                  # Create an infinite Loop
         if GPIO.input(button1)==0:            # Look for button 1 press
                 print ("Button 1 Was Pressed:")
                 if BS1==False:                # If the LED is off
                         GPIO.output(LED1,True) # turn it on
+                        countdown_thread.start
                         BS1=True              # Set Flag to show LED1 is now On 
                         m1=True
                         sleep(.5)             # Delay
                         time.sleep(2)
 
-                        for i in range(10, -1, -1):
-                           print('{num:06d}'.format(num=i))
-                           display.fill(0)
-                           display.print(':')
-                           display.print('{num:06d}'.format(num=i))
-                           time.sleep(1)                         
+                                   
                 else:                         # If the LED is on
                         GPIO.output(LED1,False) # Turn LED off
                         BS1=False               # Set Flag to show LED1 is now Off
