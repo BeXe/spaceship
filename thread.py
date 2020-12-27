@@ -117,13 +117,13 @@ def countdown():
 #                my_timer = my_timer -1
 #                sleep(1)
 
-for i in range(10, -1, -1):
+    for i in range(10, -1, -1):
                            print('{num:06d}'.format(num=i))
                            display.fill(0)
                            display.print(':')
                            display.print('{num:06d}'.format(num=i))
                            time.sleep(1)              
-countdown_thread = threading.Thread(target = countdown)
+    countdown_thread = threading.Thread(target = countdown)
                                
                                 
 while(1):                  # Create an infinite Loop
