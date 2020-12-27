@@ -115,10 +115,6 @@ def countdown():
         my_timer = 10
         for x in range(10):
                 my_timer = my_timer -1
-                print('{num:06d}'.format(num=my_timer))
-                display.fill(0)
-                display.print(':')
-                display.print('{num:06d}'.format(num=my_timer))
                 time.sleep(1)
 countdown_thread = threading.Thread(target = countdown)
 countdown_thread.start
@@ -133,6 +129,11 @@ while(1):                  # Create an infinite Loop
                         BS1=True              # Set Flag to show LED1 is now On 
                         m1=True
                         sleep(.5)             # Delay
+                        print('{num:06d}'.format(num=my_timer))
+                        display.fill(0)
+                        display.print(':')
+                        display.print('{num:06d}'.format(num=my_timer))
+                                             
                         time.sleep(2)
 
                                    
