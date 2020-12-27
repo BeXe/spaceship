@@ -53,6 +53,7 @@ LED10=6
 LED11=5
 #LED12=
 
+global my_timer
 # Movie Variables (set where movie lives)
 movie1 = ("/home/pi/movie/aurora.mp4")
 movie2 = ("/home/pi/Videos/movie2.mp4")
