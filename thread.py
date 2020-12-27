@@ -125,14 +125,13 @@ while(1):                  # Create an infinite Loop
                 print ("Button 1 Was Pressed:")
                 if BS1==False:                # If the LED is off
                         GPIO.output(LED1,True) # turn it on
-                        countdown_thread.start
                         BS1=True              # Set Flag to show LED1 is now On 
                         m1=True
                         sleep(.5)             # Delay
-                        print('{num:06d}'.format(num=my_timer))
+                        print(my_timer)
                         display.fill(0)
                         display.print(':')
-                        display.print('{num:06d}'.format(num=my_timer))
+                        display.print(my_timer)
                                              
                         time.sleep(2)
 
