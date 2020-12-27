@@ -123,7 +123,8 @@ def countdown():
                            display.print(':')
                            display.print('{num:06d}'.format(num=i))
                            time.sleep(1)              
-    countdown_thread = threading.Thread(target = countdown)
+
+countdown_thread = threading.Thread(target = countdown)
                                
                                 
 while(1):                  # Create an infinite Loop
