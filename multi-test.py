@@ -110,7 +110,7 @@ BS11=False                  # Set Flag BS3 to indicate LED is initially off
 #BS12=False                  # Set Flag BS4 to indicate LED is initially offwhile True:
  
 names = 'sippycup', 'dodgeballs', 'shoppingcart'
-movies = ['Desktop/videos/{name}.mp4'.format(name=name) for name in names]
+movies = ['home/pi/movie/{name}.mp4'.format(name=name) for name in names]
 players = [Player(movie=movie) for movie in movies]
 player = players[0]   
    
