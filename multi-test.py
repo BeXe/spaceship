@@ -10,12 +10,12 @@ GPIO.setmode (GPIO.BCM)
 GPIO.setwarnings (False)
 
 GPIO.setup(9, GPIO.IN)
-GPIO.setup(10, GPIO.IN)
 GPIO.setup(11, GPIO.IN)
+GPIO.setup(19, GPIO.IN)
 
-GPIO.setup(17, GPIO.OUT)
-GPIO.setup(22, GPIO.OUT)
-GPIO.setup(27, GPIO.OUT)
+GPIO.setup(24, GPIO.OUT)
+GPIO.setup(23, GPIO.OUT)
+GPIO.setup(28, GPIO.OUT)
 
 def welcome_loop():
     while True:
