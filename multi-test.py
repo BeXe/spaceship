@@ -127,7 +127,7 @@ from subprocess import Popen, PIPE, DEVNULL
 
 logger = logging.getLogger(__name__)
 
-class Player:
+class player:
     def __init__(self, movie):
        self.movie = movie
        self.process = None
