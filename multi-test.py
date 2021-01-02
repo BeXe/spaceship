@@ -1,8 +1,3 @@
-names = 'sippycup', 'dodgeballs', 'shoppingcart'
-movies = ['Desktop/videos/{name}.mp4'.format(name=name) for name in names]
-players = [Player(movie=movie) for movie in movies]
-player = players[0]
-
 from time import sleep     # Import sleep Library
 import RPi.GPIO as GPIO    # Import GPIO Library 
 #GPIO.setmode(GPIO.BOARD)   # Use Physical Pin Numbering Scheme
@@ -17,7 +12,10 @@ from adafruit_ht16k33 import segments
 # FOR VIDEO
 import os
 import sys
-from subprocess import Popen
+import logging
+from subprocess import Popen, PIPE, DEVNULL
+
+logger = logging.getLogger(__name__)
 
 # Create the I2C interface.
 i2c = busio.I2C(board.SCL, board.SDA)
@@ -110,6 +108,11 @@ BS9=False                  # Set Flag BS1 to indicate LED is initially off
 BS10=False                  # Set Flag BS2 to indicate LED is initially off
 BS11=False                  # Set Flag BS3 to indicate LED is initially off
 #BS12=False                  # Set Flag BS4 to indicate LED is initially offwhile True:
+ 
+names = 'sippycup', 'dodgeballs', 'shoppingcart'
+movies = ['Desktop/videos/{name}.mp4'.format(name=name) for name in names]
+players = [Player(movie=movie) for movie in movies]
+player = players[0]   
    
 for key in get_key_events(): # get GPIO input
         if key == '9':
