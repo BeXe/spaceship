@@ -46,5 +46,5 @@ if __name__=='__main__':
     first_thread.join()
     second_thread.join()
 
-    print "All done"
+    print ("All done")
     GPIO.cleanup()
