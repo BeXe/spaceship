@@ -31,17 +31,15 @@ def firstLED():
         return;
 
 def secondLED():
-        i=0
-        blinks=3
-        while (i < blinks):
-
-                GPIO.setup (18, GPIO.OUT)
-                GPIO.output (18, GPIO.HIGH)
-                time.sleep(1)
-                GPIO.output (18, GPIO.LOW)
-                time.sleep(1)
-
-                i=i+1
+    for i in range(10, -1, -1):
+   # print(i)
+    print('{num:06d}'.format(num=i))
+   # print('{num:02d}'.format(num=i))
+    display.fill(0)
+    display.print(':')
+   # display.print(i)
+    display.print('{num:06d}'.format(num=i))
+    time.sleep(1)
         return;
 		
 if __name__=='__main__':
