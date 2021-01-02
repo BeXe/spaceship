@@ -8,6 +8,9 @@ from threading import Thread
 import board
 import busio
 from adafruit_ht16k33 import segments
+import os
+import sys
+from subprocess import Popen
 
 # Create the I2C interface.
 i2c = busio.I2C(board.SCL, board.SDA)
