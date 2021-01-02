@@ -31,14 +31,14 @@ def firstLED():
         return;
 
 def secondLED():
-    for i in range(10, -1, -1):
-  	print('{num:06d}'.format(num=i))
+   	for i in range(10, -1, -1):
+  		print('{num:06d}'.format(num=i))
    # print('{num:02d}'.format(num=i))
-   	display.fill(0)
-    	display.print(':')
+   		display.fill(0)
+    		display.print(':')
    # display.print(i)
-    	display.print('{num:06d}'.format(num=i))
-    	time.sleep(1)
+    		display.print('{num:06d}'.format(num=i))
+    		time.sleep(1)
         return;
 		
 if __name__=='__main__':
