@@ -25,10 +25,10 @@ def secondLED():
         blinks=3
         while (i < blinks):
 
-                GPIO.setup (23, GPIO.OUT)
-                GPIO.output (23, GPIO.HIGH)
+                GPIO.setup (18, GPIO.OUT)
+                GPIO.output (18, GPIO.HIGH)
                 time.sleep(1)
-                GPIO.output (23, GPIO.LOW)
+                GPIO.output (18, GPIO.LOW)
                 time.sleep(1)
 
                 i=i+1
