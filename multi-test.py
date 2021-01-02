@@ -109,10 +109,7 @@ BS10=False                  # Set Flag BS2 to indicate LED is initially off
 BS11=False                  # Set Flag BS3 to indicate LED is initially off
 #BS12=False                  # Set Flag BS4 to indicate LED is initially offwhile True:
  
-names = 'sippycup', 'dodgeballs', 'shoppingcart'
-movies = ['home/pi/movie/{name}.mp4'.format(name=name) for name in names]
-players = [Player(movie=movie) for movie in movies]
-player = players[0]   
+
    
 for key in get_key_events(): # get GPIO input
         if key == '9':
@@ -157,3 +154,8 @@ class player:
                p.stdin.write(toggle_command) # pause/unpause
            except EnvironmentError as e:
                logger.warning("can't toggle %s: %s", self.movie, e)
+             
+names = 'sippycup', 'dodgeballs', 'shoppingcart'
+movies = ['home/pi/movie/{name}.mp4'.format(name=name) for name in names]
+players = [Player(movie=movie) for movie in movies]
+player = players[0]   
