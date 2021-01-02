@@ -39,7 +39,7 @@ def secondLED():
    # display.print(i)
                 display.print('{num:06d}'.format(num=i))
                 time.sleep(1)
-        return;
+#        return;
 		
 if __name__=='__main__':
     first_thread = Thread(target = firstLED)
