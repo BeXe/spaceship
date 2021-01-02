@@ -35,7 +35,7 @@ def videos():
                     time.sleep(.5)
                     playProcess.stdin.write('q')
                     time.sleep(.5)
-                    print "Play Sippycup"
+                    print ("Play Sippycup")
                     sippycup_video=subprocess.Popen(['omxplayer','-b','Desktop/videos/sippycup.mp4'],stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE, close_fds=True)
                     time.sleep(10)
                     sippycup_video.stdin.write('q')
@@ -47,7 +47,7 @@ def videos():
                     time.sleep(.5)
                     playProcess.stdin.write('q')
                     time.sleep(.5)
-                    print "Play Dodgeballs"
+                    print ("Play Dodgeballs")
                     dodgeballs_video=subprocess.Popen(['omxplayer','-b','Desktop/videos/dodgeballs.mp4'],stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE, close_fds=True)
                     time.sleep(10)
                     dodgeballs_video.stdin.write('q')
@@ -59,7 +59,7 @@ def videos():
                     time.sleep(.5)
                     playProcess.stdin.write('q')
                     time.sleep(.5)
-                    print "Play Shoppingcart"
+                    print ("Play Shoppingcart")
                     shoppingcart_video=subprocess.Popen(['omxplayer','-b','Desktop/videos/shoppingcart.mp4'],stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE, close_fds=True)
                     time.sleep(10)
                     shoppingcart_video.stdin.write('q')
