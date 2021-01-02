@@ -5,6 +5,16 @@ import time
 GPIO.setmode (GPIO.BCM)
 import threading
 from threading import Thread
+import board
+import busio
+from adafruit_ht16k33 import segments
+
+# Create the I2C interface.
+i2c = busio.I2C(board.SCL, board.SDA)
+
+# Create the LED segment class.
+# This creates a 7 segment 4 character display:
+display = segments.Seg7x4(i2c)
 
 def firstLED():
         i=0
