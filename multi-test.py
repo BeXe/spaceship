@@ -21,7 +21,7 @@ def welcome_loop():
     while True:
             global playProcess
             x = 1
-            print "LOOPING"
+            print ("LOOPING")
             time.sleep(.5)
             playProcess=subprocess.Popen(['omxplayer','-b','Desktop/videos/loop/loop.mp4'],stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE, close_fds=True)
             time.sleep(10)
@@ -31,7 +31,7 @@ def welcome_loop():
 def videos():
     while True:
             if GPIO.input(9):
-                    print "STOP LOOP"
+                    print ("STOP LOOP")
                     time.sleep(.5)
                     playProcess.stdin.write('q')
                     time.sleep(.5)
@@ -43,7 +43,7 @@ def videos():
                     welcome_loop()
 
             if GPIO.input(10):
-                    print "STOP LOOP"
+                    print ("STOP LOOP")
                     time.sleep(.5)
                     playProcess.stdin.write('q')
                     time.sleep(.5)
@@ -55,7 +55,7 @@ def videos():
                     welcome_loop()
 
             if GPIO.input(11):
-                    print "STOP LOOP"
+                    print ("STOP LOOP")
                     time.sleep(.5)
                     playProcess.stdin.write('q')
                     time.sleep(.5)
