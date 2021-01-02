@@ -13,9 +13,9 @@ def firstLED():
 
                 GPIO.setup (24, GPIO.OUT)
                 GPIO.output (24, GPIO.HIGH)
-                time.sleep(0.1)
+                time.sleep(1)
                 GPIO.output (24, GPIO.LOW)
-                time.sleep(0.1)
+                time.sleep(1)
 
                 i=i+1
         return;
@@ -27,9 +27,9 @@ def secondLED():
 
                 GPIO.setup (23, GPIO.OUT)
                 GPIO.output (23, GPIO.HIGH)
-                time.sleep(0.1)
+                time.sleep(1)
                 GPIO.output (23, GPIO.LOW)
-                time.sleep(0.1)
+                time.sleep(1)
 
                 i=i+1
         return;
@@ -41,7 +41,7 @@ if __name__=='__main__':
     second_thread.start()
 
     #DO STUFF HERE INSTEAD OF JUST WAITING?
-       
+      
     #wait for threads to finish
     first_thread.join()
     second_thread.join()
