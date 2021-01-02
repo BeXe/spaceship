@@ -16,6 +16,8 @@ i2c = busio.I2C(board.SCL, board.SDA)
 # This creates a 7 segment 4 character display:
 display = segments.Seg7x4(i2c)
 
+movie1 = ("/home/pi/movie/aurora.mp4")
+
 def firstLED():
         i=0
         blinks=5
@@ -40,18 +42,25 @@ def secondLED():
                 display.print('{num:06d}'.format(num=i))
                 time.sleep(1)
 #        return;
-		
+
+def thirdLED():
+       os.system('killall omxplayer.bin')
+       omxc = Popen(['omxplayer', '-b', movie1])
+
 if __name__=='__main__':
     first_thread = Thread(target = firstLED)
     second_thread = Thread(target = secondLED)
+    third_thread = Thread(target = thirdLED)
     first_thread.start()
     second_thread.start()
+    third_thread.start()
 
     #DO STUFF HERE INSTEAD OF JUST WAITING?
       
     #wait for threads to finish
     first_thread.join()
     second_thread.join()
+    third_thread.join()
 
     print ("All done")
     GPIO.cleanup()
