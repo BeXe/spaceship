@@ -180,8 +180,8 @@ def thirdLED():
        omxc = Popen(['omxplayer', '-b', movie1])
 
 if __name__=='__main__':
-    d = Blink()
-    d.start()
+    #d = Blink()
+    #d.start()
     button_thread = Thread(target = buttonLOOP)
     first_thread = Thread(target = firstLED)
     second_thread = Thread(target = Countdown)
