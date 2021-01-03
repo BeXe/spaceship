@@ -146,7 +146,7 @@ def buttonLOOP():
                                 GPIO.output(LED3,False) # Turn LED off
                                 BS3=False               # Set Flag to show LED3 is now Off
                                 sleep(.5)
-class Blink:                       
+class Blink(Thread):                       
         def firstLED():
                 i=0
                 blinks=5
@@ -161,7 +161,7 @@ class Blink:
                         i=i+1
                 return;
 
-class Countdown:        
+class Countdown(Thread):        
         def secondLED():
                 for i in range(10, -1, -1):
                         print('{num:06d}'.format(num=i))
@@ -180,22 +180,22 @@ def thirdLED():
 if __name__=='__main__':
     d = Blink()
     d.start()
-    #button_thread = Thread(target = buttonLOOP)
-    #first_thread = Thread(target = firstLED)
-    #second_thread = Thread(target = secondLED)
+    button_thread = Thread(target = buttonLOOP)
+    first_thread = Thread(target = Blink)
+    second_thread = Thread(target = Countdown)
     third_thread = Thread(target = thirdLED)
     
-    #button_thread.start()    
-    #first_thread.start()
-    #second_thread.start()
+    button_thread.start()    
+    first_thread.start()
+    second_thread.start()
     third_thread.start()
 
     #DO STUFF HERE INSTEAD OF JUST WAITING?
       
     #wait for threads to finish
-    #button_thread.join()
-    #first_thread.join()
-    #second_thread.join()
+    button_thread.join()
+    first_thread.join()
+    second_thread.join()
     third_thread.join()
 
     print ("All done")
