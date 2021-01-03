@@ -13,10 +13,6 @@ import os
 import sys
 from subprocess import Popen
 
-import ray
-
-ray.init()
-
 # Create the I2C interface.
 i2c = busio.I2C(board.SCL, board.SDA)
 
