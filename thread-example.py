@@ -4,7 +4,7 @@ import time
 from time import sleep 
 GPIO.setmode(GPIO.BCM)
 import threading
-from threading import Thread
+from threading import thread
 from multiprocessing import Process
 import board
 import busio
