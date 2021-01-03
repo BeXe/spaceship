@@ -130,6 +130,7 @@ def buttonLOOP():
                                 BS2=True              # Set Flag to show LED2 is now On 
                                 time.sleep(.5)             # Delay
                                 firstLED()
+                                secondLED()
                                                                 
                                                         
                         else:                         # If the LED is on
@@ -163,16 +164,16 @@ def firstLED():
               i=i+1
        return;
 
-class Countdown(Thread):        
-        def secondLED(self):
-                for i in range(10, -1, -1):
-                        print('{num:06d}'.format(num=i))
+      
+def secondLED():
+       for i in range(10, -1, -1):
+              print('{num:06d}'.format(num=i))
    # print('{num:02d}'.format(num=i))
-                        display.fill(0)
-                        display.print(':')
+              display.fill(0)
+              display.print(':')
    # display.print(i)
-                        display.print('{num:06d}'.format(num=i))
-                        time.sleep(1)
+              display.print('{num:06d}'.format(num=i))
+              time.sleep(1)
 #        return;
 
 def thirdLED():
@@ -184,7 +185,7 @@ if __name__=='__main__':
     #d.start()
     button_thread = Thread(target = buttonLOOP)
     first_thread = Thread(target = firstLED)
-    second_thread = Thread(target = Countdown)
+    second_thread = Thread(target = secondLED)
     third_thread = Thread(target = thirdLED)
     
     button_thread.start()    
