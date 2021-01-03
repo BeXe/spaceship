@@ -13,6 +13,10 @@ import os
 import sys
 from subprocess import Popen
 
+import ray
+
+ray.init()
+
 # Create the I2C interface.
 i2c = busio.I2C(board.SCL, board.SDA)
 
@@ -130,8 +134,8 @@ def buttonLOOP():
                                 GPIO.output(LED2,True) # turn it on
                                 BS2=True              # Set Flag to show LED2 is now On 
                                 time.sleep(.5)             # Delay
-                                firstLED
-                                secondLED
+                                firstLED()
+                                secondLED()
                                                                 
                                                         
                         else:                         # If the LED is on
