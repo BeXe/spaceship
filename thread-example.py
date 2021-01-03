@@ -179,7 +179,7 @@ def thirdLED():
 
 if __name__=='__main__':
     d = Blink()
-    d.run()
+    d.start()
     #button_thread = Thread(target = buttonLOOP)
     #first_thread = Thread(target = firstLED)
     #second_thread = Thread(target = secondLED)
