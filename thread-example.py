@@ -183,13 +183,13 @@ if __name__=='__main__':
     d = Blink()
     d.start()
     button_thread = Thread(target = buttonLOOP)
-    first_thread = Thread(target = Blink)
+    first_thread = Thread(target = firstLED)
     second_thread = Thread(target = Countdown)
     third_thread = Thread(target = thirdLED)
     
     button_thread.start()    
-    #first_thread.start()
-    #second_thread.start()
+    first_thread.start()
+    second_thread.start()
     third_thread.start()
 
     #DO STUFF HERE INSTEAD OF JUST WAITING?
