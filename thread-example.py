@@ -130,6 +130,8 @@ def buttonLOOP():
                                 BS2=True              # Set Flag to show LED2 is now On 
                                 time.sleep(.5)             # Delay
                                 Blink()
+                                firstLED()
+                                
                                                         
                         else:                         # If the LED is on
                                 GPIO.output(LED2,False) # Turn LED off
