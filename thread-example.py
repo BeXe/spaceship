@@ -37,6 +37,7 @@ BS1=False                  # Set Flag BS1 to indicate LED is initially off
 movie1 = ("/home/pi/movie/aurora.mp4")
 
 def buttonLOOP():
+        global BS1
         while(1):                  # Create an infinite Loop
                 if GPIO.input(button1)==0:            # Look for button 1 press
                         print ("Button 1 Was Pressed:")
