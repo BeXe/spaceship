@@ -130,8 +130,8 @@ def buttonLOOP():
                                 GPIO.output(LED2,True) # turn it on
                                 BS2=True              # Set Flag to show LED2 is now On 
                                 time.sleep(.5)             # Delay
-                                first_thread.start_new_thread(firstLED, ())
-                                second_thread.start_new_thread(secondLED, ())
+                                firstLED
+                                secondLED
                                                                 
                                                         
                         else:                         # If the LED is on
