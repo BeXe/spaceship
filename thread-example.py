@@ -178,22 +178,24 @@ def thirdLED():
        omxc = Popen(['omxplayer', '-b', movie1])
 
 if __name__=='__main__':
-    button_thread = Thread(target = buttonLOOP)
-    first_thread = Thread(target = firstLED)
-    second_thread = Thread(target = secondLED)
+    d = Blink()
+    d.run()
+    #button_thread = Thread(target = buttonLOOP)
+    #first_thread = Thread(target = firstLED)
+    #second_thread = Thread(target = secondLED)
     third_thread = Thread(target = thirdLED)
     
-    button_thread.start()    
-    first_thread.start()
-    second_thread.start()
+    #button_thread.start()    
+    #first_thread.start()
+    #second_thread.start()
     third_thread.start()
 
     #DO STUFF HERE INSTEAD OF JUST WAITING?
       
     #wait for threads to finish
-    button_thread.join()
-    first_thread.join()
-    second_thread.join()
+    #button_thread.join()
+    #first_thread.join()
+    #second_thread.join()
     third_thread.join()
 
     print ("All done")
