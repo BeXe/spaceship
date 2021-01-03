@@ -186,10 +186,10 @@ if __name__=='__main__':
     #d = Blink()
     #d.start()
     
-    button_thread = thread(target = buttonLOOP)
-    first_thread = thread(target = firstLED)
-    second_thread = thread(target = secondLED)
-    third_thread = thread(target = thirdLED)
+    button_thread = Thread(target = buttonLOOP)
+    first_thread = Thread(target = firstLED)
+    second_thread = Thread(target = secondLED)
+    third_thread = Thread(target = thirdLED)
     
     button_thread.start()    
     first_thread.start()
