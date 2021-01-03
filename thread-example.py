@@ -129,7 +129,6 @@ def buttonLOOP():
                                 GPIO.output(LED2,True) # turn it on
                                 BS2=True              # Set Flag to show LED2 is now On 
                                 time.sleep(.5)             # Delay
-                                third_thread.stop()
                                                         
                         else:                         # If the LED is on
                                 GPIO.output(LED2,False) # Turn LED off
@@ -147,30 +146,31 @@ def buttonLOOP():
                                 GPIO.output(LED3,False) # Turn LED off
                                 BS3=False               # Set Flag to show LED3 is now Off
                                 sleep(.5)
-                       
-def firstLED():
-        i=0
-        blinks=5
-        while (i < blinks):
+class Blink:                       
+        def firstLED():
+                i=0
+                blinks=5
+                while (i < blinks):
 
-                GPIO.setup (24, GPIO.OUT)
-                GPIO.output (24, GPIO.HIGH)
-                time.sleep(1)
-                GPIO.output (24, GPIO.LOW)
-                time.sleep(1)
+                        GPIO.setup (24, GPIO.OUT)
+                        GPIO.output (24, GPIO.HIGH)
+                        time.sleep(1)
+                        GPIO.output (24, GPIO.LOW)
+                        time.sleep(1)
 
-                i=i+1
-        return;
+                        i=i+1
+                return;
 
-def secondLED():
-       for i in range(10, -1, -1):
-                print('{num:06d}'.format(num=i))
+class Countdown:        
+        def secondLED():
+                for i in range(10, -1, -1):
+                        print('{num:06d}'.format(num=i))
    # print('{num:02d}'.format(num=i))
-                display.fill(0)
-                display.print(':')
+                        display.fill(0)
+                        display.print(':')
    # display.print(i)
-                display.print('{num:06d}'.format(num=i))
-                time.sleep(1)
+                        display.print('{num:06d}'.format(num=i))
+                        time.sleep(1)
 #        return;
 
 def thirdLED():
