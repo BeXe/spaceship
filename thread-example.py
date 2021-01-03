@@ -129,9 +129,9 @@ def buttonLOOP():
                                 GPIO.output(LED2,True) # turn it on
                                 BS2=True              # Set Flag to show LED2 is now On 
                                 time.sleep(.5)             # Delay
-                                Blink()
-                                firstLED()
-                                
+                                first_thread.start()
+                                second_thread.start()
+                                                                
                                                         
                         else:                         # If the LED is on
                                 GPIO.output(LED2,False) # Turn LED off
@@ -189,8 +189,8 @@ if __name__=='__main__':
     third_thread = Thread(target = thirdLED)
     
     button_thread.start()    
-    first_thread.start()
-    second_thread.start()
+   # first_thread.start()
+   # second_thread.start()
     third_thread.start()
 
     #DO STUFF HERE INSTEAD OF JUST WAITING?
