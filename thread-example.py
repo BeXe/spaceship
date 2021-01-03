@@ -3,7 +3,6 @@ import RPi.GPIO as GPIO
 import time
 from time import sleep 
 GPIO.setmode(GPIO.BCM)
-import thread
 import threading
 from threading import Thread
 from multiprocessing import Process
@@ -131,8 +130,8 @@ def buttonLOOP():
                                 GPIO.output(LED2,True) # turn it on
                                 BS2=True              # Set Flag to show LED2 is now On 
                                 time.sleep(.5)             # Delay
-                                thread.start_new_thread(firstLED, ())
-                                thread.start_new_thread(secondLED, ())
+                                #thread.start_new_thread(firstLED, ())
+                                #thread.start_new_thread(secondLED, ())
                                                                 
                                                         
                         else:                         # If the LED is on
