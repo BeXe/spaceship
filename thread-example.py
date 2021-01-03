@@ -5,6 +5,7 @@ from time import sleep
 GPIO.setmode(GPIO.BCM)
 import threading
 from threading import Thread
+from multiprocessing import Process
 import board
 import busio
 from adafruit_ht16k33 import segments
@@ -183,10 +184,11 @@ def thirdLED():
 if __name__=='__main__':
     #d = Blink()
     #d.start()
-    button_thread = Thread(target = buttonLOOP)
-    first_thread = Thread(target = firstLED)
-    second_thread = Thread(target = secondLED)
-    third_thread = Thread(target = thirdLED)
+    
+    button_thread = Process(target = buttonLOOP)
+    first_thread = Process(target = firstLED)
+    second_thread = Process(target = secondLED)
+    third_thread = Process(target = thirdLED)
     
     button_thread.start()    
     first_thread.start()
