@@ -1,7 +1,7 @@
 #!/usr/bin/python
-
 import RPi.GPIO as GPIO
 import time
+from time import sleep 
 GPIO.setmode(GPIO.BCM)
 import threading
 from threading import Thread
@@ -44,8 +44,7 @@ def buttonLOOP():
                         if BS1==False:                # If the LED is off
                                 GPIO.output(LED1,True) # turn it on
                                 BS1=True              # Set Flag to show LED1 is now On 
-                                sleep(.5)             # Delay
-                                time.sleep(2)
+                                time.sleep(.5)             # Delay
 
                                 for i in range(10, -1, -1):
                                    print('{num:06d}'.format(num=i))
