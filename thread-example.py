@@ -54,8 +54,8 @@ def buttonLOOP():
                                    time.sleep(1)                         
                         else:                         # If the LED is on
                                 GPIO.output(LED1,False) # Turn LED off
-                                  BS1=False               # Set Flag to show LED1 is now Off
-                                  sleep(.5)
+                                BS1=False               # Set Flag to show LED1 is now Off
+                                sleep(.5)
 
 def firstLED():
         i=0
