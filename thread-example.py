@@ -93,7 +93,17 @@ BS11=False
 movie1 = ("/home/pi/movie/aurora.mp4")
 
 def buttonLOOP():
-        global BS1 BS2 BS3 BS4 BS5 BS6 BS7 BS8 BS9 BS10 BS11
+        global BS1
+        global BS2
+        global BS3
+        global BS4
+        global BS5
+        global BS6
+        global BS7
+        global BS8
+        global BS9
+        global BS10
+        global BS11
         while(1):                  # Create an infinite Loop
                 if GPIO.input(button1)==0:            # Look for button 1 press
                         print ("Button 1 Was Pressed:")
