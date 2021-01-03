@@ -3,6 +3,7 @@ import RPi.GPIO as GPIO
 import time
 from time import sleep 
 GPIO.setmode(GPIO.BCM)
+import thread
 import threading
 from threading import Thread
 from multiprocessing import Process
