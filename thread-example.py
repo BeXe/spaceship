@@ -129,8 +129,6 @@ def buttonLOOP():
                                 GPIO.output(LED2,True) # turn it on
                                 BS2=True              # Set Flag to show LED2 is now On 
                                 time.sleep(.5)             # Delay
-                                first_thread.start()
-                                second_thread.start()
                                                                 
                                                         
                         else:                         # If the LED is on
@@ -150,7 +148,7 @@ def buttonLOOP():
                                 BS3=False               # Set Flag to show LED3 is now Off
                                 sleep(.5)
 class Blink(Thread):                       
-        def firstLED():
+        def firstLED(self):
                 i=0
                 blinks=5
                 while (i < blinks):
@@ -165,7 +163,7 @@ class Blink(Thread):
                 return;
 
 class Countdown(Thread):        
-        def secondLED():
+        def secondLED(self):
                 for i in range(10, -1, -1):
                         print('{num:06d}'.format(num=i))
    # print('{num:02d}'.format(num=i))
@@ -189,8 +187,8 @@ if __name__=='__main__':
     third_thread = Thread(target = thirdLED)
     
     button_thread.start()    
-   # first_thread.start()
-   # second_thread.start()
+    #first_thread.start()
+    #second_thread.start()
     third_thread.start()
 
     #DO STUFF HERE INSTEAD OF JUST WAITING?
