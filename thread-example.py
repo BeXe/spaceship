@@ -2,7 +2,7 @@
 
 import RPi.GPIO as GPIO
 import time
-GPIO.setmode (GPIO.BCM)
+GPIO.setmode(GPIO.BCM)
 import threading
 from threading import Thread
 import board
@@ -100,6 +100,7 @@ if __name__=='__main__':
     #DO STUFF HERE INSTEAD OF JUST WAITING?
       
     #wait for threads to finish
+    button_thread.join()
     first_thread.join()
     second_thread.join()
     third_thread.join()
