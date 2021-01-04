@@ -1,11 +1,17 @@
-import RPi.GPIO
+#import RPi.GPIO
+#import time
+
+
+import RPi.GPIO as GPIO
 import time
 import threading
+from time import sleep 
+GPIO.setmode(GPIO.BCM)
 
 pinLED = 24
 pinButton = 9
 
-GPIO.setmode(GPIO.BOARD)
+#GPIO.setmode(GPIO.BOARD)
 GPIO.setup(pinLED, GPIO.OUT)
 GPIO.setup(pinButton, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.output(pinLED, 0)
