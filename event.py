@@ -37,8 +37,7 @@ def main_thread():
 
                 flashing.clear()
                 t.join()
-
-     except Exception as e:
+        except Exception as e:
             print(e)
-     finally:
+        finally:
             GPIO.cleanup()
