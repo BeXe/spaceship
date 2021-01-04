@@ -29,7 +29,7 @@ def flash(pinLED, flashing):
 
     GPIO.output(pinLED, 0)
 
-if __name__ == '__main__':	
+#if __name__ == '__main__':	
     def main_thread():
         flashing = threading.Event()
         flashing.clear()
