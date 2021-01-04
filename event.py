@@ -22,23 +22,23 @@ def flash(pinLED, flashing):
     GPIO.output(pinLED, 0)
 
 if __name__ == '__main__':	
-def main_thread():
-    flashing = threading.Event()
-    flashing.clear()
+    def main_thread():
+        flashing = threading.Event()
+        flashing.clear()
 
-    try:
-        while True:
-            time.sleep(0.02)  
-            if GPIO.input(pinButton) == 1:
-                t = threading.Thread(target=flash, args=(pinLED, flashing,))
-                flashing.set()
-                t.start()
+        try:
+            while True:
+                time.sleep(0.02)  
+                if GPIO.input(pinButton) == 1:
+                    t = threading.Thread(target=flash, args=(pinLED, flashing,))
+                    flashing.set()
+                    t.start()
 
-                time.sleep(2)  # work would be here
+                    time.sleep(2)  # work would be here
 
-                flashing.clear()
-                t.join()
-        #except Exception as e:
-        #    print(e.message)
-        finally:
-            GPIO.cleanup()
+                    flashing.clear()
+                    t.join()
+            except Exception as e:
+                print(e.message)
+            finally:
+                GPIO.cleanup()
