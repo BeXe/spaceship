@@ -189,6 +189,32 @@ class thread(threading.Thread):
               i=i+1
         return;
 
+class thread2(threading.Thread):  
+    def __init__(self, thread_name, thread_ID):  
+        threading.Thread.__init__(self)  
+        self.thread_name = thread_name  
+        self.thread_ID = thread_ID  
+  
+        # helper function to execute the threads 
+    def run(self):  
+        print(str(self.thread_name) +" "+ str(self.thread_ID));  
+        for i in range(10, -1, -1):
+              print('{num:06d}'.format(num=i))
+   # print('{num:02d}'.format(num=i))
+              display.fill(0)
+              display.print(':')
+   # display.print(i)
+              display.print('{num:06d}'.format(num=i))
+              time.sleep(1)
+        return;
+
+thread3 = thread("GFG3", 3000)  
+thread4 = thread("GeeksforGeeks", 4000);  
+  
+thread3.start()  
+thread4.start()
+
+
 thread1 = thread("GFG", 1000)  
 thread2 = thread("GeeksforGeeks", 2000);  
   
