@@ -20,7 +20,8 @@ def flash(pinLED, flashing):
         time.sleep(0.5)
 
     GPIO.output(pinLED, 0)
-	
+
+if __name__ == '__main__':	
 def main_thread():
     flashing = threading.Event()
     flashing.clear()
