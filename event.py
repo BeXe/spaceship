@@ -35,7 +35,7 @@ def flash(pinLED, flashing):
         flashing.clear()
 
         try:
-            while True:
+            while (1):
                 time.sleep(0.02)  
                 if GPIO.input(pinButton) == 0:
                     t = threading.Thread(target=flash, args=(pinLED, flashing,))
