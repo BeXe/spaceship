@@ -222,6 +222,11 @@ thread2 = thread("GeeksforGeeks", 2000);
   
 thread1.start()  
 thread2.start()
+
+thread1.join()
+thread2.join()
+thread3.join()
+thread4.join()
         
 def secondLED():
        for i in range(10, -1, -1):
