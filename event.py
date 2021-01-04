@@ -45,7 +45,7 @@ if __name__ == '__main__':
 
                     flashing.clear()
                     t.join()
-            except Exception as e:
-                print(e.message)
-            finally:
-                GPIO.cleanup()
+        except Exception as e:
+            print(e.message)
+        finally:
+            GPIO.cleanup()
