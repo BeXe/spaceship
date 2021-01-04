@@ -15,7 +15,7 @@ pinButton = 9
 #GPIO.setmode(GPIO.BOARD)
 GPIO.setup(pinLED, GPIO.OUT)
 GPIO.setup(pinButton, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.output(pinLED, 0)
+GPIO.output(pinLED, GPIO.OUT)
 
 working = False
 #t.join()
@@ -37,7 +37,7 @@ if __name__ == '__main__':
         try:
             while True:
                 time.sleep(0.02)  
-                if GPIO.input(pinButton) == 1:
+                if GPIO.input(pinButton) == 0:
                     t = threading.Thread(target=flash, args=(pinLED, flashing,))
                     flashing.set()
                     t.start()
