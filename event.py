@@ -10,7 +10,7 @@ GPIO.setmode(GPIO.BCM)
 #GPIO.setwarnings(False)
 
 pinLED = 18
-pinButton = 9
+pinButton = 19
 
 #GPIO.setmode(GPIO.BOARD)
 GPIO.setup(pinLED, GPIO.OUT)
