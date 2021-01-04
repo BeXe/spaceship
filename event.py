@@ -1,7 +1,7 @@
 #import RPi.GPIO
 #import time
 
-
+GPIO.setwarnings(False) 
 import RPi.GPIO as GPIO
 import time
 import threading
