@@ -40,5 +40,5 @@ def main_thread():
 
      #   except Exception as e:
      #           print(e)
-        finally:
-                GPIO.cleanup()
+     #   finally:
+     #           GPIO.cleanup()
