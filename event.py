@@ -9,7 +9,7 @@ from time import sleep
 GPIO.setmode(GPIO.BCM)
 #GPIO.setwarnings(False)
 
-pinLED = 24
+pinLED = 18
 pinButton = 9
 
 #GPIO.setmode(GPIO.BOARD)
