@@ -7,7 +7,7 @@ import time
 import threading
 from time import sleep 
 GPIO.setmode(GPIO.BCM)
-GPIO.setwarnings(False)
+#GPIO.setwarnings(False)
 
 pinLED = 24
 pinButton = 9
