@@ -131,9 +131,9 @@ def buttonLOOP():
                                 BS2=True              # Set Flag to show LED2 is now On 
                                 time.sleep(.5)             # Delay
                                 thread.run(thread1)
-                                thread.run(thread2)
-                                thread.run(thread3)
-                                thread.run(thread4)
+                               # thread.run(thread2)
+                                thread2.run(thread3)
+                               # thread2.run(thread4)
                                 
                                                                 
                                                         
@@ -210,8 +210,8 @@ class thread2(threading.Thread):
               time.sleep(1)
         return;
 
-thread3 = thread("GFG3", 3000)  
-thread4 = thread("GeeksforGeeks", 4000);  
+thread3 = thread2("GFG3", 3000)  
+thread4 = thread2("GeeksforGeeks", 4000);  
   
 thread3.start()  
 thread4.start()
