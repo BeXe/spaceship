@@ -176,7 +176,19 @@ class thread(threading.Thread):
         # helper function to execute the threads 
     def run(self):  
         print(str(self.thread_name) +" "+ str(self.thread_ID));  
-  
+        i=0
+        blinks=5
+        while (i < blinks):
+
+              GPIO.setup (24, GPIO.OUT)
+              GPIO.output (24, GPIO.HIGH)
+              time.sleep(1)
+              GPIO.output (24, GPIO.LOW)
+              time.sleep(1)
+
+              i=i+1
+        return;
+
 thread1 = thread("GFG", 1000)  
 thread2 = thread("GeeksforGeeks", 2000);  
   
