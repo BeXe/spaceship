@@ -11,6 +11,7 @@ GPIO.setup(pinButton, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.output(pinLED, 0)
 
 working = False
+t.join()
 def flash(pinLED, flashing):
     status = threading.local()
     status.LED = False
