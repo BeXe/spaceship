@@ -183,7 +183,7 @@ thread2 = thread("GeeksforGeeks", 2000);
 thread1.start()  
 thread2.start()
         
-        def secondLED():
+def secondLED():
        for i in range(10, -1, -1):
               print('{num:06d}'.format(num=i))
    # print('{num:02d}'.format(num=i))
