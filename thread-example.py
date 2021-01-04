@@ -198,7 +198,7 @@ def thirdLED():
        os.system('killall omxplayer.bin')
        omxc = Popen(['omxplayer', '-b', movie1])
 
-#if __name__=='__main__':
+if __name__=='__main__':
     #d = Blink()
     #d.start()
     
