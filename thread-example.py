@@ -130,8 +130,8 @@ def buttonLOOP():
                                 GPIO.output(LED2,True) # turn it on
                                 BS2=True              # Set Flag to show LED2 is now On 
                                 time.sleep(.5)             # Delay
-                                firstLED.run()
-                                secondLED.run()
+                                thread.run(thread1)
+                                thread.run(thread2)
                                 
                                                                 
                                                         
@@ -167,7 +167,23 @@ def firstLED():
        return;
 
       
-def secondLED():
+class thread(threading.Thread):  
+    def __init__(self, thread_name, thread_ID):  
+        threading.Thread.__init__(self)  
+        self.thread_name = thread_name  
+        self.thread_ID = thread_ID  
+  
+        # helper function to execute the threads 
+    def run(self):  
+        print(str(self.thread_name) +" "+ str(self.thread_ID));  
+  
+thread1 = thread("GFG", 1000)  
+thread2 = thread("GeeksforGeeks", 2000);  
+  
+thread1.start()  
+thread2.start()
+        
+        def secondLED():
        for i in range(10, -1, -1):
               print('{num:06d}'.format(num=i))
    # print('{num:02d}'.format(num=i))
@@ -182,7 +198,7 @@ def thirdLED():
        os.system('killall omxplayer.bin')
        omxc = Popen(['omxplayer', '-b', movie1])
 
-if __name__=='__main__':
+#if __name__=='__main__':
     #d = Blink()
     #d.start()
     
