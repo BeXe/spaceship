@@ -15,7 +15,7 @@ pinButton = 9
 #GPIO.setmode(GPIO.BOARD)
 GPIO.setup(pinLED, GPIO.OUT)
 GPIO.setup(pinButton, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.output(pinLED, GPIO.OUT)
+#GPIO.output(pinLED, GPIO.OUT)
 
 working = False
 #t.join()
