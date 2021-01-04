@@ -191,7 +191,7 @@ class thread(threading.Thread):
               i=i+1
         return;
 
-class thread2(threading.Thread):  
+class countdown(threading.Thread):  
     def __init__(self, thread_name, thread_ID):  
         threading.Thread.__init__(self)  
         self.thread_name = thread_name  
@@ -210,8 +210,8 @@ class thread2(threading.Thread):
               time.sleep(1)
         return;
 
-thread3 = thread2("GFG3", 3000)  
-thread4 = thread2("GeeksforGeeks", 4000);  
+thread3 = countdown("countdown", 3000)  
+thread4 = countdown("countdown2", 4000);  
   
 thread3.start()  
 thread4.start()
