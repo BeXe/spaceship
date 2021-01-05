@@ -210,23 +210,6 @@ class countdown(threading.Thread):
               time.sleep(1)
         return;
 
-thread3 = countdown("countdown", 3000)  
-thread4 = countdown("countdown2", 4000);  
-  
-thread3.start()  
-thread4.start()
-
-
-thread1 = thread("GFG", 1000)  
-thread2 = thread("GeeksforGeeks", 2000);  
-  
-thread1.start()  
-thread2.start()
-
-thread1.join()
-thread2.join()
-thread3.join()
-thread4.join()
         
 def secondLED():
        for i in range(10, -1, -1):
@@ -236,8 +219,7 @@ def secondLED():
               display.print(':')
    # display.print(i)
               display.print('{num:06d}'.format(num=i))
-              time.sleep(1)
-#        return;
+              time.sleep(1)#        return;
 
 def thirdLED():
        os.system('killall omxplayer.bin')
@@ -246,12 +228,27 @@ def thirdLED():
 if __name__=='__main__':
     #d = Blink()
     #d.start()
+    thread1 = thread("GFG", 1000)  
+    thread2 = thread("GeeksforGeeks", 2000);
+    thread3 = countdown("countdown", 3000)  
+    thread4 = countdown("countdown2", 4000);
+     
+    thread1.start()  
+    thread2.start()
+    thread3.start()  
+    thread4.start()
+
+    thread1.join()
+    thread2.join()
+    thread3.join()
+    thread4.join() 
     
     button_thread = Thread(target = buttonLOOP)
     first_thread = Thread(target = firstLED)
     second_thread = Thread(target = secondLED)
     third_thread = Thread(target = thirdLED)
     
+
     button_thread.start()    
     first_thread.start()
     second_thread.start()
