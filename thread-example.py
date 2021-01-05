@@ -132,7 +132,8 @@ def buttonLOOP():
                                 time.sleep(.5)             # Delay
                                 thread.run(thread1)
                                # thread.run(thread2)
-                                countdown.run
+                                thread4 = thread("GeeksforGeeks", 2000);
+                                thread4.start
                                # thread2.run(thread4)
                                 
                                                                 
@@ -230,7 +231,7 @@ if __name__=='__main__':
     #d.start()
     thread1 = thread("GFG", 1000)  
     thread2 = thread("GeeksforGeeks", 2000);
-    thread3 = Thread(target = countdown) 
+    thread3 = thread("test", 3000); 
          
     thread1.start()  
     thread2.start()
