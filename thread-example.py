@@ -192,8 +192,9 @@ class thread(threading.Thread):
         return;
 
 class countdown(threading.Thread):  
-    def __init__(self): 
-        self.thread = threading.Thread(target=self.run)  
+    def threading.Thread.__init__(self)  
+        self.thread_name = thread_name  
+        self.thread_ID = thread_ID 
          
         # helper function to execute the threads 
     def run(self):  
