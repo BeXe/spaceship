@@ -132,7 +132,7 @@ def buttonLOOP():
                                 time.sleep(.5)             # Delay
                                 thread.run(thread1)
                                # thread.run(thread2)
-                                countdown.run(thread3)
+                                countdown.run
                                # thread2.run(thread4)
                                 
                                                                 
@@ -191,12 +191,10 @@ class thread(threading.Thread):
               i=i+1
         return;
 
-class countdown(threading.Thread):  
-    def __init__(self, thread_name, thread_ID):  
-        threading.Thread.__init__(self)  
-        self.thread_name = thread_name  
-        self.thread_ID = thread_ID  
-  
+class countdown:  
+    def __init__(self): 
+        self.thread = threading.Thread(target=self.run)  
+         
         # helper function to execute the threads 
     def run(self):  
         print(str(self.thread_name) +" "+ str(self.thread_ID));  
