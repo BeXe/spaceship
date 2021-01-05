@@ -132,7 +132,7 @@ def buttonLOOP():
                                 time.sleep(.5)             # Delay
                                 thread.run(thread1)
                                # thread.run(thread2)
-                                countdown
+                                countdown.init()
                                # thread2.run(thread4)
                                 
                                                                 
