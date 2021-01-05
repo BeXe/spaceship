@@ -228,9 +228,8 @@ if __name__=='__main__':
     #d.start()
     thread1 = thread("GFG", 1000)  
     thread2 = thread("GeeksforGeeks", 2000);
-    thread3 = countdown("countdown", 3000)  
-    thread4 = countdown("countdown2", 4000);
-     
+    thread3 = Thread(target = countdown) 
+         
     thread1.start()  
     thread2.start()
     thread3.start()  
