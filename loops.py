@@ -12,21 +12,11 @@ from adafruit_ht16k33 import segments
 import os
 import sys
 from subprocess import Popen
+from PIL import Image
 
-import pygame
+#read the image
+im = Image.open("/home/pi/movie/earth.png")
 
-pygame.init()
-screen = pygame.display.set_mode((400, 300))
-done = False
-
-while not done:
-        for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                        done = True
-        
-        pygame.display.flip()
-
- 
 # Create the I2C interface.
 i2c = busio.I2C(board.SCL, board.SDA)
 
@@ -107,6 +97,8 @@ BS11=False
 # Set movie variables
 movie1 = ("/home/pi/movie/aurora.mp4")
 movie2 = ("/home/pi/movie/launch.mp4")
+
+im.show()
 
 def movie11():
        os.system('killall omxplayer.bin')
