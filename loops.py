@@ -14,7 +14,7 @@ import sys
 from subprocess import Popen
 
 import kivy
-kivy.require('1.0.6') # replace with your current kivy version !
+kivy.require('1.11.1') # replace with your current kivy version !
 
 from kivy.app import App
 from kivy.uix.label import Label
@@ -196,27 +196,21 @@ def buttonLOOP2():
                                 time.sleep(1)
                                 i=i+1	
                           
-def MyApp():
-        while(1):                  # Create an infinite Loop
-                def build(self):
-                    return Label(text='Hello world')
-              
-                        
+                       
 if __name__=='__main__':
    
-    MyApp_thread = Thread(target = MyApp)   
     button_thread = Thread(target = buttonLOOP)
     first_thread = Thread(target = buttonLOOP2)
     
     button_thread.start()    
     first_thread.start()
-    MyApp_thread.start()
-        
+
+      
     #DO STUFF HERE INSTEAD OF JUST WAITING?
       
     #wait for threads to finish
     button_thread.join()
     first_thread.join()
-    MyApp_thread.join()
+
     print ("All done")
     GPIO.cleanup()
