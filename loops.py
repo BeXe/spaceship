@@ -219,7 +219,7 @@ class MyApp(App):
 		#outputControl.bind(on_press=press_callback)
 		#beepButton = Button(text="BEEP!")
 		#beepButton.bind(on_press=press_callback)
-		#wimg = Image(source='logo.png')
+		wimg = Image(source='home/pi/movie/earth.png')
 		#speedSlider = Slider(orientation='vertical', min=1, max=30, value=speed)
 		#speedSlider.bind(on_touch_down=update_speed, on_touch_move=update_speed)
 
