@@ -94,19 +94,13 @@ BS11=False
 movie1 = ("/home/pi/movie/aurora.mp4")
 movie2 = ("/home/pi/movie/launch.mp4")
 
-def buttonLOOP():
-        global BS1
-        global BS2
-        global BS3
-        global BS4
-        global BS5
-        global BS6
-        global BS7
-        global BS8
-        global BS9
-        global BS10
-        global BS11
+def movie1
+       os.system('killall omxplayer.bin')
+       omxc = Popen(['omxplayer', '-b', movie1])
 
+def movie2
+       os.system('killall omxplayer.bin')
+       omxc = Popen(['omxplayer', '-b', movie2])
 
 def buttonLOOP():
         global BS1
@@ -176,8 +170,7 @@ def buttonLOOP2():
                 if GPIO.input(button1)==0:            # Look for button 1 press
                         print ("Button 1 Was Pressed:")
                         
-                        os.system('killall omxplayer.bin')
-                        omxc = Popen(['omxplayer', '-b', movie2])
+                        movie1()
                         
                         i=0
                         blinks=5
