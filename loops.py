@@ -195,18 +195,7 @@ def buttonLOOP2():
                                 time.sleep(1)
                                 i=i+1
 
-class InputButton(Button):
-	def update(self, dt):
-		if GPIO.input(button2) == True:
-			self.state = 'normal'
-		else:
-			self.state = 'down'
-			for i in range(10, -1, -1):
-				print('{num:06d}'.format(num=i))
-				display.fill(0)
-				display.print(':')
-				display.print('{num:06d}'.format(num=i))
-				time.sleep(1)
+
 				
 class MyApp(App):
 
@@ -220,25 +209,25 @@ class MyApp(App):
 			self.rect = Rectangle(size=(800,600), pos=layout.pos)
 
 		# Instantiate the first UI object (the GPIO input indicator):
-		inputDisplay = InputButton(text="Input")
+		#inputDisplay = InputButton(text="Input")
 
 		# Schedule the update of the state of the GPIO input button:
 		Clock.schedule_interval(inputDisplay.update, 1.0/10.0)
 
 		# Create the rest of the UI objects (and bind them to callbacks, if necessary):
-		outputControl = ToggleButton(text="LED")
+		#outputControl = ToggleButton(text="LED")
 		#outputControl.bind(on_press=press_callback)
-		beepButton = Button(text="BEEP!")
+		#beepButton = Button(text="BEEP!")
 		#beepButton.bind(on_press=press_callback)
-		wimg = Image(source='logo.png')
+		#wimg = Image(source='logo.png')
 		#speedSlider = Slider(orientation='vertical', min=1, max=30, value=speed)
 		#speedSlider.bind(on_touch_down=update_speed, on_touch_move=update_speed)
 
 		# Add the UI elements to the layout:
 		layout.add_widget(wimg)
-		layout.add_widget(inputDisplay)
-		layout.add_widget(outputControl)
-		layout.add_widget(beepButton)
+		#layout.add_widget(inputDisplay)
+		#layout.add_widget(outputControl)
+		#layout.add_widget(beepButton)
 		#layout.add_widget(speedSlider)
 
 		# Start flashing the LED
