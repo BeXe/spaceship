@@ -195,7 +195,19 @@ def buttonLOOP2():
                                 time.sleep(1)
                                 i=i+1
 
-                            
+class InputButton(Button):
+	def update(self, dt):
+		if GPIO.input(buttonPin) == True:
+			self.state = 'normal'
+		else:
+			self.state = 'down'
+			for i in range(10, -1, -1):
+				print('{num:06d}'.format(num=i))
+				display.fill(0)
+				display.print(':')
+				display.print('{num:06d}'.format(num=i))
+				time.sleep(1)
+				
 class MyApp(App):
 
 	def build(self):
