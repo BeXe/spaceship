@@ -239,7 +239,7 @@ class MyApp(App):
 		layout.add_widget(inputDisplay)
 		layout.add_widget(outputControl)
 		layout.add_widget(beepButton)
-		layout.add_widget(speedSlider)
+		#layout.add_widget(speedSlider)
 
 		# Start flashing the LED
 		Clock.schedule_once(flash, 1.0/speed)
