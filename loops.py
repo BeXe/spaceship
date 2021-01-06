@@ -117,6 +117,7 @@ def buttonLOOP():
         while(1):                  # Create an infinite Loop
                 if GPIO.input(button1)==0:            # Look for button 1 press
                         print ("Button 1 Was Pressed:")
+                        time.sleep(5)             # Delay
                         for i in range(10, -1, -1):
                                    print('{num:06d}'.format(num=i))
                                    display.fill(0)
