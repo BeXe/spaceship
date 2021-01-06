@@ -182,16 +182,11 @@ def buttonLOOP2():
                                 time.sleep(1)
                                 GPIO.output (24, GPIO.LOW)
                                 time.sleep(1)
-                                i=i+1
-                         return;
-             
+                                i=i+1    
      
-    
     button_thread = Thread(target = buttonLOOP)
     first_thread = Thread(target = buttonLOOP2)
     
-    
-
     button_thread.start()    
     first_thread.start()
     
