@@ -197,7 +197,7 @@ def buttonLOOP2():
 
 class InputButton(Button):
 	def update(self, dt):
-		if GPIO.input(buttonPin) == True:
+		if GPIO.input(button1) == True:
 			self.state = 'normal'
 		else:
 			self.state = 'down'
