@@ -20,11 +20,7 @@ from kivy.app import App
 from kivy.uix.label import Label
 
 
-class MyApp(App):
-
-    def build(self):
-        return Label(text='Hello world')
-
+    
 
 
 
@@ -200,7 +196,12 @@ def buttonLOOP2():
                                 time.sleep(1)
                                 i=i+1	
                           
-                            
+def MyApp():
+        while(1):                  # Create an infinite Loop
+                def build(self):
+                    return Label(text='Hello world')
+              
+                        
 if __name__=='__main__':
    
     MyApp_thread = Thread(target = MyApp)   
