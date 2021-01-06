@@ -92,7 +92,7 @@ BS11=False
 
 # Set movie variables
 movie1 = ("/home/pi/movie/aurora.mp4")
-movie1 = ("/home/pi/movie/launch.mp4")
+movie2 = ("/home/pi/movie/launch.mp4")
 
 def buttonLOOP():
         global BS1
