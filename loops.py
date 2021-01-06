@@ -227,7 +227,7 @@ class MyApp(App):
 
 		# Create the rest of the UI objects (and bind them to callbacks, if necessary):
 		outputControl = ToggleButton(text="LED")
-		outputControl.bind(on_press=press_callback)
+		#outputControl.bind(on_press=press_callback)
 		beepButton = Button(text="BEEP!")
 		#beepButton.bind(on_press=press_callback)
 		wimg = Image(source='logo.png')
