@@ -202,19 +202,20 @@ def buttonLOOP2():
                           
                             
 if __name__=='__main__':
-    MyApp().run()
-         
+   
+    MyApp_thread = Thread(target = MyApp)   
     button_thread = Thread(target = buttonLOOP)
     first_thread = Thread(target = buttonLOOP2)
     
     button_thread.start()    
     first_thread.start()
-    
+    MyApp_thread.start()
+        
     #DO STUFF HERE INSTEAD OF JUST WAITING?
       
     #wait for threads to finish
     button_thread.join()
     first_thread.join()
-    
+    MyApp_thread.join()
     print ("All done")
     GPIO.cleanup()
