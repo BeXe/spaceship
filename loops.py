@@ -13,18 +13,6 @@ import os
 import sys
 from subprocess import Popen
 
-import kivy
-kivy.require('1.1.0')
-
-from kivy.app import App
-from kivy.uix.button import Button
-from kivy.uix.togglebutton import ToggleButton
-from kivy.uix.gridlayout import GridLayout
-from kivy.uix.image import Image
-from kivy.uix.slider import Slider
-from kivy.clock import Clock
-from kivy.graphics import Color, Rectangle
-
 # Create the I2C interface.
 i2c = busio.I2C(board.SCL, board.SDA)
 
