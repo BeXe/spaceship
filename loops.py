@@ -231,7 +231,7 @@ class MyApp(App):
 		beepButton = Button(text="BEEP!")
 		#beepButton.bind(on_press=press_callback)
 		wimg = Image(source='logo.png')
-		speedSlider = Slider(orientation='vertical', min=1, max=30, value=speed)
+		#speedSlider = Slider(orientation='vertical', min=1, max=30, value=speed)
 		#speedSlider.bind(on_touch_down=update_speed, on_touch_move=update_speed)
 
 		# Add the UI elements to the layout:
