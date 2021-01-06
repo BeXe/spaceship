@@ -170,7 +170,7 @@ def buttonLOOP2():
                 if GPIO.input(button1)==0:            # Look for button 1 press
                         print ("Button 1 Was Pressed:")
                         
-                        movie11()
+                        movie22()
                         
                         i=0
                         blinks=5
