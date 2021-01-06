@@ -92,6 +92,7 @@ BS11=False
 
 # Set movie variables
 movie1 = ("/home/pi/movie/aurora.mp4")
+movie1 = ("/home/pi/movie/launch.mp4")
 
 def buttonLOOP():
         global BS1
@@ -174,6 +175,10 @@ def buttonLOOP2():
         while(1):                  # Create an infinite Loop
                 if GPIO.input(button1)==0:            # Look for button 1 press
                         print ("Button 1 Was Pressed:")
+                        
+                        os.system('killall omxplayer.bin')
+                        omxc = Popen(['omxplayer', '-b', movie2])
+                        
                         i=0
                         blinks=5
                         while (i < blinks):
