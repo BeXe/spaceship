@@ -13,19 +13,20 @@ import os
 import sys
 from subprocess import Popen
 
-import kivy
-kivy.require('1.11.1') # replace with your current kivy version !
+import pygame
 
-from kivy.app import App
-from kivy.uix.label import Label
+pygame.init()
+screen = pygame.display.set_mode((400, 300))
+done = False
 
+while not done:
+        for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                        done = True
+        
+        pygame.display.flip()
 
-    
-
-
-
-
-
+ 
 # Create the I2C interface.
 i2c = busio.I2C(board.SCL, board.SDA)
 
