@@ -280,11 +280,10 @@ def buttonLOOP2():
                        
 if __name__=='__main__':
    
+    third_thread = Thread(target = ledLOOP)
     button_thread = Thread(target = buttonLOOP)
     first_thread = Thread(target = buttonLOOP2)
-    third_thread = Thread(target = ledLOOP)
-
-    
+       
     button_thread.start()    
     first_thread.start()
     third_thread.start()
