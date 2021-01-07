@@ -222,7 +222,15 @@ def buttonLOOP():
                                           display.fill(0)
                                           display.print(':')
                                           display.print('{num:06d}'.format(num=i))
-                                          time.sleep(1)                         
+                                          time.sleep(1) 
+                                for i in range(0, +1, +1):
+                                          print('{num:06d}'.format(num=i))
+                                          display.fill(0)
+                                          display.print(':')
+                                          display.print('{num:06d}'.format(num=i))
+                                          time.sleep(.1) 
+                                          
+                                          
                         else:                         # If the LED is on
                                 GPIO.output(LED1,False) # Turn LED off
                                 BS1=False               # Set Flag to show LED1 is now Off
@@ -274,7 +282,7 @@ def buttonLOOP2():
                         movie22()
                         
                         i=0
-                        blinks=14
+                        blinks=10
                         while (i < blinks):
                                 GPIO.setup (24, GPIO.OUT)
                                 GPIO.output (24, GPIO.HIGH)
