@@ -97,45 +97,45 @@ movie2 = ("/home/pi/movie/launch.mp4")
 def ledLOOP():
        while(1):
               GPIO.output(LED1,True) # turn it on
-              time.sleep(.1) 
+              time.sleep(.5) 
               GPIO.output(LED1,False) #tun it off
-              time.sleep(.1) 
+              time.sleep(.5) 
               GPIO.output(LED3,True) # turn it on
-              time.sleep(.1)
+              time.sleep(.5)
               GPIO.output(LED3,False) #tun it off       
-              time.sleep(.1)
+              time.sleep(.5)
               GPIO.output(LED4,True) # turn it on
-              time.sleep(.1)
+              time.sleep(.5)
               GPIO.output(LED4,False) #tun it off
-              time.sleep(.1)       
+              time.sleep(.5)       
               GPIO.output(LED5,True) # turn it on
-              time.sleep(.1) 
+              time.sleep(.5) 
               GPIO.output(LED5,False) #tun it off
-              time.sleep(.1)
+              time.sleep(.5)
               GPIO.output(LED6,True) # turn it on
-              time.sleep(.1)
+              time.sleep(.5)
               GPIO.output(LED6,False) #tun it off       
-              time.sleep(.1)
+              time.sleep(.5)
               GPIO.output(LED7,True) # turn it on
-              time.sleep(.1) 
+              time.sleep(.5) 
               GPIO.output(LED7,False) #tun it off 
-              time.sleep(.1)
+              time.sleep(.5)
               GPIO.output(LED8,True) # turn it on
-              time.sleep(.1) 
+              time.sleep(.5) 
               GPIO.output(LED8,False) #tun it off
-              time.sleep(.1)
+              time.sleep(.5)
               GPIO.output(LED9,True) # turn it on
-              time.sleep(.1) 
+              time.sleep(.5) 
               GPIO.output(LED9,False) #tun it off
-              time.sleep(.1)
+              time.sleep(.5)
               GPIO.output(LED10,True) # turn it on
-              time.sleep(.1) 
+              time.sleep(.5) 
               GPIO.output(LED10,False) #tun it off
-              time.sleep(.1)
+              time.sleep(.5)
               GPIO.output(LED11,True) # turn it on
-              time.sleep(.1) 
+              time.sleep(.5) 
               GPIO.output(LED11,False) #tun it off       
-              time.sleep(.1)
+              time.sleep(.5)
               
               GPIO.output(LED1,True) # turn it on
               time.sleep(.1)
@@ -178,9 +178,6 @@ def ledLOOP():
               time.sleep(.1)
               GPIO.output(LED11,False) # turn it on
               time.sleep(.1)
-
-              
-              
               
 def movie11():
        os.system("sudo killall -9 fbi")
@@ -189,12 +186,14 @@ def movie11():
        #os.system("sudo fbi -T 2 -d /dev/fb1 -noverbose -a -t 10 *.png")
        #os.system("sudo fbi -T 2 -d /dev/fb1 -noverbose -a -t 10 *.png")
        os.system("sudo fbi -d /dev/fb0 -T 10 -t 10 *.png")
+       
 def movie22():
        os.system("sudo killall -9 fbi")
        os.system('killall omxplayer.bin')
        omxc = Popen(['omxplayer', '-b', movie2])
        os.system("sudo fbi -d /dev/fb0 -T 10 -t 10 *.png")
      # sudo fbi -d /dev/fb0 -T 10 -t 10 *.png (werkt vanaf console)
+
 def buttonLOOP():
         global BS1
         global BS2
@@ -284,16 +283,17 @@ if __name__=='__main__':
     button_thread = Thread(target = buttonLOOP)
     first_thread = Thread(target = buttonLOOP2)
        
+    third_thread.start()
     button_thread.start()    
     first_thread.start()
-    third_thread.start()
      
     #DO STUFF HERE INSTEAD OF JUST WAITING?
       
     #wait for threads to finish
+    third_thread.join()
     button_thread.join()
     first_thread.join()
-    third_thread.join()
+
 
     print ("All done")
     GPIO.cleanup()
