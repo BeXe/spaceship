@@ -113,7 +113,7 @@ def ledLOOP():
               GPIO.output(LED4,False) #tun it off
               time.sleep(.2)       
               GPIO.output(LED5,True) # turn it on
-              time.sleep(.2)              time.sleep(.5) 
+              time.sleep(.2) 
               GPIO.output(LED5,False) #tun it off
               time.sleep(.2)
               GPIO.output(LED6,True) # turn it on
