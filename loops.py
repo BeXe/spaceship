@@ -304,18 +304,18 @@ def buttonLOOP2():
 if __name__=='__main__':
    
     third_thread = Thread(target = ledLOOP)
-    #button_thread = Thread(target = buttonLOOP)
+    button_thread = Thread(target = buttonLOOP)
     #first_thread = Thread(target = buttonLOOP2)
        
     third_thread.start()
-   # button_thread.start()    
+    button_thread.start()    
    # first_thread.start()
      
     #DO STUFF HERE INSTEAD OF JUST WAITING?
       
     #wait for threads to finish
     third_thread.join()
-   # button_thread.join()
+    button_thread.join()
    # first_thread.join()
 
 
