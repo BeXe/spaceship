@@ -120,7 +120,7 @@ def ledLOOP():
                      GPIO.output(LED10,True) # turn it on
                      time.sleep(.1)
                      GPIO.output(LED11,True) # turn it on
-                     time.sleep(.1)
+                     time.sleep(1)
                         
                      GPIO.output(LED11,False) # turn it on
                      time.sleep(.1)
@@ -143,7 +143,7 @@ def ledLOOP():
                      GPIO.output(LED3,False) # turn it on
                      time.sleep(.1)
                      GPIO.output(LED1,False) # turn it on
-                     time.sleep(.1)
+                     time.sleep(1)
                      
 def LEDblink():
        global LEDdemo2
