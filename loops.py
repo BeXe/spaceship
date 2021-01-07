@@ -147,8 +147,8 @@ def ledLOOP():
                      
 def LEDblink
        global LEDdemo2
-              while(1):
-                     if LEDdemo == True:
+       while(1):
+              if LEDdemo == True:
                             GPIO.output(LED1,True) # turn it on
                             time.sleep(.5) 
                             GPIO.output(LED1,False) #tun it off
