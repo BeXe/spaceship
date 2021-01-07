@@ -98,13 +98,14 @@ def movie11():
        os.system("sudo killall -9 fbi")
        os.system('killall omxplayer.bin')
        omxc = Popen(['omxplayer', '-b', movie1])
-       #os.system("sudo fbi -T 2 -d /dev/fb1 -noverbose -a earth.png")
-       os.system("sudo fbi -T 2 -d /dev/fb1 -noverbose -a -u -t 4 *.png")
+       #os.system("sudo fbi -T 2 -d /dev/fb1 -noverbose -a -t 10 *.png")
+       os.system("sudo fbi -T 2 -d /dev/fb1 -noverbose -a -t 10 *.png")
 def movie22():
        os.system("sudo killall -9 fbi")
        os.system('killall omxplayer.bin')
        omxc = Popen(['omxplayer', '-b', movie2])
-       os.system("sudo fbi -T 2 -d /dev/fb1 -noverbose -a -u -t 4 *.png")
+       os.system("sudo fbi -T 2 -d /dev/fb1 -noverbose -a -t 10 *.png")
+     # sudo fbi -d /dev/fb0 -T 10 -t 10 *.png (werkt vanaf console)
 def buttonLOOP():
         global BS1
         global BS2
