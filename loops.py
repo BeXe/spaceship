@@ -95,13 +95,15 @@ movie1 = ("/home/pi/movie/aurora.mp4")
 movie2 = ("/home/pi/movie/launch.mp4")
 
 def movie11():
+       os.system("sudo killall -9 fbi")
        os.system('killall omxplayer.bin')
        omxc = Popen(['omxplayer', '-b', movie1])
-
+       os.system("sudo fbi -T 2 -d /dev/fb1 -noverbose -a earth.png")
 def movie22():
+       os.system("sudo killall -9 fbi")
        os.system('killall omxplayer.bin')
        omxc = Popen(['omxplayer', '-b', movie2])
-
+       os.system("sudo fbi -T 2 -d /dev/fb1 -noverbose -a earth.png")
 def buttonLOOP():
         global BS1
         global BS2
@@ -135,6 +137,7 @@ def buttonLOOP():
                                 GPIO.output(LED2,True) # turn it on
                                 BS2=True              # Set Flag to show LED2 is now On 
                                 time.sleep(.5)             # Delay
+                                movie11
                                                        
                                                                 
                                                         
