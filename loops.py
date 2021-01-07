@@ -225,6 +225,7 @@ def buttonLOOP():
                         if BS1==False:                # If the LED is off
                                 GPIO.output(LED2,True) # turn it on
                                 BS2=True
+                                movie22()
                                # LEDdemo=False
                                 time.sleep(6)             # Delay
                                 for i in range(10, -1, -1):
@@ -316,7 +317,7 @@ if __name__=='__main__':
     #wait for threads to finish
     third_thread.join()
     button_thread.join()
-   # first_thread.join()
+    #first_thread.join()
 
 
     print ("All done")
