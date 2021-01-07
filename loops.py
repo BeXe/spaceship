@@ -48,6 +48,8 @@ LED10=6
 LED11=5
 #LED12=
 
+LEDdemo=False
+
 # GPIO input setup
 GPIO.setup(button1,GPIO.IN,pull_up_down=GPIO.PUD_UP) # Make button1 an input, Activate Pull UP Resistor
 GPIO.setup(button2,GPIO.IN,pull_up_down=GPIO.PUD_UP) # Make button 2 an input, Activate Pull Up Resistor
@@ -96,88 +98,89 @@ movie2 = ("/home/pi/movie/launch.mp4")
 
 def ledLOOP():
        while(1):
-              GPIO.output(LED1,True) # turn it on
-              time.sleep(.5) 
-              GPIO.output(LED1,False) #tun it off
-              time.sleep(.5) 
-              GPIO.output(LED3,True) # turn it on
-              time.sleep(.5)
-              GPIO.output(LED3,False) #tun it off       
-              time.sleep(.5)
-              GPIO.output(LED4,True) # turn it on
-              time.sleep(.5)
-              GPIO.output(LED4,False) #tun it off
-              time.sleep(.5)       
-              GPIO.output(LED5,True) # turn it on
-              time.sleep(.5) 
-              GPIO.output(LED5,False) #tun it off
-              time.sleep(.5)
-              GPIO.output(LED6,True) # turn it on
-              time.sleep(.5)
-              GPIO.output(LED6,False) #tun it off       
-              time.sleep(.5)
-              GPIO.output(LED7,True) # turn it on
-              time.sleep(.5) 
-              GPIO.output(LED7,False) #tun it off 
-              time.sleep(.5)
-              GPIO.output(LED8,True) # turn it on
-              time.sleep(.5) 
-              GPIO.output(LED8,False) #tun it off
-              time.sleep(.5)
-              GPIO.output(LED9,True) # turn it on
-              time.sleep(.5) 
-              GPIO.output(LED9,False) #tun it off
-              time.sleep(.5)
-              GPIO.output(LED10,True) # turn it on
-              time.sleep(.5) 
-              GPIO.output(LED10,False) #tun it off
-              time.sleep(.5)
-              GPIO.output(LED11,True) # turn it on
-              time.sleep(.5) 
-              GPIO.output(LED11,False) #tun it off       
-              time.sleep(.5)
-              
-              GPIO.output(LED1,True) # turn it on
-              time.sleep(.1)
-              GPIO.output(LED3,True) # turn it on
-              time.sleep(.1)
-              GPIO.output(LED4,True) # turn it on
-              time.sleep(.1)
-              GPIO.output(LED5,True) # turn it on
-              time.sleep(.1)
-              GPIO.output(LED6,True) # turn it on
-              time.sleep(.1)
-              GPIO.output(LED7,True) # turn it on
-              time.sleep(.1)
-              GPIO.output(LED8,True) # turn it on
-              time.sleep(.1)
-              GPIO.output(LED9,True) # turn it on
-              time.sleep(.1)
-              GPIO.output(LED10,True) # turn it on
-              time.sleep(.1)
-              GPIO.output(LED11,True) # turn it on
-              time.sleep(.1)
-              
-              GPIO.output(LED1,False) # turn it on
-              time.sleep(.1)
-              GPIO.output(LED3,False) # turn it on
-              time.sleep(.1)
-              GPIO.output(LED4,False) # turn it on
-              time.sleep(.1)
-              GPIO.output(LED5,False) # turn it on
-              time.sleep(.1)
-              GPIO.output(LED6,False) # turn it on
-              time.sleep(.1)
-              GPIO.output(LED7,False) # turn it on
-              time.sleep(.1)
-              GPIO.output(LED8,False) # turn it on
-              time.sleep(.1)
-              GPIO.output(LED9,False) # turn it on
-              time.sleep(.1)
-              GPIO.output(LED10,False) # turn it on
-              time.sleep(.1)
-              GPIO.output(LED11,False) # turn it on
-              time.sleep(.1)
+              if LEDdemo == False:
+                     GPIO.output(LED1,True) # turn it on
+                     time.sleep(.5) 
+                     GPIO.output(LED1,False) #tun it off
+                     time.sleep(.5) 
+                     GPIO.output(LED3,True) # turn it on
+                     time.sleep(.5)
+                     GPIO.output(LED3,False) #tun it off       
+                     time.sleep(.5)
+                     GPIO.output(LED4,True) # turn it on
+                     time.sleep(.5)
+                     GPIO.output(LED4,False) #tun it off
+                     time.sleep(.5)       
+                     GPIO.output(LED5,True) # turn it on
+                     time.sleep(.5) 
+                     GPIO.output(LED5,False) #tun it off
+                     time.sleep(.5)
+                     GPIO.output(LED6,True) # turn it on
+                     time.sleep(.5)
+                     GPIO.output(LED6,False) #tun it off       
+                     time.sleep(.5)
+                     GPIO.output(LED7,True) # turn it on
+                     time.sleep(.5) 
+                     GPIO.output(LED7,False) #tun it off 
+                     time.sleep(.5)
+                     GPIO.output(LED8,True) # turn it on
+                     time.sleep(.5) 
+                     GPIO.output(LED8,False) #tun it off
+                     time.sleep(.5)
+                     GPIO.output(LED9,True) # turn it on
+                     time.sleep(.5) 
+                     GPIO.output(LED9,False) #tun it off
+                     time.sleep(.5)
+                     GPIO.output(LED10,True) # turn it on
+                     time.sleep(.5) 
+                     GPIO.output(LED10,False) #tun it off
+                     time.sleep(.5)
+                     GPIO.output(LED11,True) # turn it on
+                     time.sleep(.5) 
+                     GPIO.output(LED11,False) #tun it off       
+                     time.sleep(.5)
+                     
+                     GPIO.output(LED1,True) # turn it on
+                     time.sleep(.1)
+                     GPIO.output(LED3,True) # turn it on
+                     time.sleep(.1)
+                     GPIO.output(LED4,True) # turn it on
+                     time.sleep(.1)
+                     GPIO.output(LED5,True) # turn it on
+                     time.sleep(.1)
+                     GPIO.output(LED6,True) # turn it on
+                     time.sleep(.1)
+                     GPIO.output(LED7,True) # turn it on
+                     time.sleep(.1)
+                     GPIO.output(LED8,True) # turn it on
+                     time.sleep(.1)
+                     GPIO.output(LED9,True) # turn it on
+                     time.sleep(.1)
+                     GPIO.output(LED10,True) # turn it on
+                     time.sleep(.1)
+                     GPIO.output(LED11,True) # turn it on
+                     time.sleep(.1)
+                     
+                     GPIO.output(LED1,False) # turn it on
+                     time.sleep(.1)
+                     GPIO.output(LED3,False) # turn it on
+                     time.sleep(.1)
+                     GPIO.output(LED4,False) # turn it on
+                     time.sleep(.1)
+                     GPIO.output(LED5,False) # turn it on
+                     time.sleep(.1)
+                     GPIO.output(LED6,False) # turn it on
+                     time.sleep(.1)
+                     GPIO.output(LED7,False) # turn it on
+                     time.sleep(.1)
+                     GPIO.output(LED8,False) # turn it on
+                     time.sleep(.1)
+                     GPIO.output(LED9,False) # turn it on
+                     time.sleep(.1)
+                     GPIO.output(LED10,False) # turn it on
+                     time.sleep(.1)
+                     GPIO.output(LED11,False) # turn it on
+                     time.sleep(.1)
               
 def movie11():
        os.system("sudo killall -9 fbi")
