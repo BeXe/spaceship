@@ -215,6 +215,7 @@ def buttonLOOP():
                         if BS1==False:                # If the LED is off
                                 GPIO.output(LED2,True) # turn it on
                                 BS2=True
+                                LEDdemo=True
                                 time.sleep(6)             # Delay
                                 for i in range(10, -1, -1):
                                           print('{num:06d}'.format(num=i))
@@ -273,7 +274,7 @@ def buttonLOOP2():
                         movie22()
                         
                         i=0
-                        blinks=5
+                        blinks=14
                         while (i < blinks):
                                 GPIO.setup (24, GPIO.OUT)
                                 GPIO.output (24, GPIO.HIGH)
