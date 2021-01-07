@@ -100,7 +100,7 @@ movie2 = ("/home/pi/movie/launch.mp4")
 def ledLOOP():
        global LEDdemo
        while(1):
-              if LEDdemo == true:          
+              if LEDdemo == True:          
                      GPIO.output(LED1,True) # turn it on
                      time.sleep(.1)
                      GPIO.output(LED3,True) # turn it on
