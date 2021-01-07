@@ -209,13 +209,16 @@ def buttonLOOP():
         while(1):                  # Create an infinite Loop
                 if GPIO.input(button1)==0:            # Look for button 1 press
                         print ("Button 1 Was Pressed:")
-                        time.sleep(6)             # Delay
-                        for i in range(10, -1, -1):
-                                   print('{num:06d}'.format(num=i))
-                                   display.fill(0)
-                                   display.print(':')
-                                   display.print('{num:06d}'.format(num=i))
-                                   time.sleep(1)                         
+                        if BS1==False:                # If the LED is off
+                                GPIO.output(LED2,True) # turn it on
+                                BS2=True
+                                time.sleep(6)             # Delay
+                                for i in range(10, -1, -1):
+                                          print('{num:06d}'.format(num=i))
+                                          display.fill(0)
+                                          display.print(':')
+                                          display.print('{num:06d}'.format(num=i))
+                                          time.sleep(1)                         
                         else:                         # If the LED is on
                                 GPIO.output(LED1,False) # Turn LED off
                                 BS1=False               # Set Flag to show LED1 is now Off
