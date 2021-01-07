@@ -216,6 +216,8 @@ def buttonLOOP():
         global BS8
         global BS9
         global BS10
+        global LEDdemo
+        global LEDdemo2
         global BS11
         while(1):                  # Create an infinite Loop
                 if GPIO.input(button1)==0:            # Look for button 1 press
