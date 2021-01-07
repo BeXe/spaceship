@@ -233,7 +233,7 @@ def buttonLOOP():
                                           display.print(':')
                                           display.print('{num:06d}'.format(num=i))
                                           time.sleep(1) 
-                                for i in range(13, +9999, +13):
+                                for i in range(0, +9999, +13):
                                           print('{num:06d}'.format(num=i))
                                           display.fill(0)
                                           display.print('{num:06d}'.format(num=i))
