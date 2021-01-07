@@ -227,18 +227,18 @@ def buttonLOOP():
                                 BS2=True
                                 movie22()
                                # LEDdemo=False
-                                #time.sleep(6)             # Delay
-                                #for i in range(10, -1, -1):
-                                #          print('{num:06d}'.format(num=i))
-                                #          display.fill(0)
-                                #          display.print(':')
-                                #          display.print('{num:06d}'.format(num=i))
-                                #          time.sleep(1) 
-                                #for i in range(0, +9999, +13):
-                                #          print('{num:06d}'.format(num=i))
-                                #          display.fill(0)
-                                #          display.print('{num:06d}'.format(num=i))
-                                #          time.sleep(.1) 
+                                time.sleep(6)             # Delay
+                                for i in range(10, -1, -1):
+                                          print('{num:06d}'.format(num=i))
+                                          display.fill(0)
+                                          display.print(':')
+                                          display.print('{num:06d}'.format(num=i))
+                                          time.sleep(1) 
+                                for i in range(0, +9999, +13):
+                                          print('{num:06d}'.format(num=i))
+                                          display.fill(0)
+                                          display.print('{num:06d}'.format(num=i))
+                                          time.sleep(.1) 
                                # LEDdemo=True
                                           
                         else:                         # If the LED is on
@@ -288,47 +288,34 @@ def buttonLOOP2():
         while(1):                  # Create an infinite Loop
                 if GPIO.input(button1)==0:            # Look for button 1 press
                         print ("Button 1 Was Pressed:")
-                        time.sleep(6)
-                        for i in range(10, -1, -1):
-                                          print('{num:06d}'.format(num=i))
-                                          display.fill(0)
-                                          display.print(':')
-                                          display.print('{num:06d}'.format(num=i))
-                                          time.sleep(1) 
-                        for i in range(0, +9999, +13):
-                                          print('{num:06d}'.format(num=i))
-                                          display.fill(0)
-                                          display.print('{num:06d}'.format(num=i))
-                                          time.sleep(.1) 
-                               # LEDdemo=True
                         
-                        #i=0
-                        #blinks=10
-                        #while (i < blinks):
-                        #       GPIO.setup (24, GPIO.OUT)
-                        #        GPIO.output (24, GPIO.HIGH)
-                        #        time.sleep(1)
-                        #        GPIO.output (24, GPIO.LOW)
-                        #        time.sleep(1)
-                        #        i=i+1	
+                        i=0
+                        blinks=10
+                        while (i < blinks):
+                               GPIO.setup (24, GPIO.OUT)
+                                GPIO.output (24, GPIO.HIGH)
+                                time.sleep(1)
+                                GPIO.output (24, GPIO.LOW)
+                                time.sleep(1)
+                                i=i+1	
                           
                        
 if __name__=='__main__':
    
     third_thread = Thread(target = ledLOOP)
     button_thread = Thread(target = buttonLOOP)
-    first_thread = Thread(target = buttonLOOP2)
+    #first_thread = Thread(target = buttonLOOP2)
        
     third_thread.start()
     button_thread.start()    
-    first_thread.start()
+    #first_thread.start()
      
     #DO STUFF HERE INSTEAD OF JUST WAITING?
       
     #wait for threads to finish
     third_thread.join()
     button_thread.join()
-    first_thread.join()
+    #first_thread.join()
 
 
     print ("All done")
