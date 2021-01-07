@@ -292,7 +292,7 @@ def buttonLOOP2():
                         i=0
                         blinks=10
                         while (i < blinks):
-                               GPIO.setup (24, GPIO.OUT)
+                                GPIO.setup (24, GPIO.OUT)
                                 GPIO.output (24, GPIO.HIGH)
                                 time.sleep(1)
                                 GPIO.output (24, GPIO.LOW)
