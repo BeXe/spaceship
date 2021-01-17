@@ -91,6 +91,7 @@ BS8=False
 BS9=False
 BS10=False
 BS11=False
+start1=True
 #BS12=False
 
 # Set movie variables
@@ -196,14 +197,22 @@ def movie11():
        omxc = Popen(['omxplayer', '-b', movie1])
        #os.system("sudo fbi -T 2 -d /dev/fb1 -noverbose -a -t 10 *.png")
        #os.system("sudo fbi -T 2 -d /dev/fb1 -noverbose -a -t 10 *.png")
-       os.system("sudo fbi -d /dev/fb0 -T 10 -t 10 *.png")
+       os.system("sudo fbi -d /dev/fb0 -T 10 -t 10 /home/pi/code/spaceship/*.png")
        
 def movie22():
        os.system("sudo killall -9 fbi")
        os.system('killall omxplayer.bin')
        omxc = Popen(['omxplayer', '-b', movie2])
-       os.system("sudo fbi -d /dev/fb0 -T 10 -t 10 *.png")
+       os.system("sudo fbi -d /dev/fb0 -T 10 -t 10 /home/pi/code/spaceship/*.png")
      # sudo fbi -d /dev/fb0 -T 10 -t 10 *.png (werkt vanaf console)
+
+def start():
+       global start1
+       while():
+              if start1 == True:          
+                     #GPIO.output(LED1,True) # turn it on
+                     os.system("sudo fbi -d /dev/fb0 -T 10 -t 10 /home/pi/code/spaceship/*.png")
+                     start1 = False
 
 def buttonLOOP():
         global BS1
@@ -219,6 +228,7 @@ def buttonLOOP():
         global LEDdemo
         global LEDdemo2
         global BS11
+        global start1
         while(1):                  # Create an infinite Loop
                 if GPIO.input(button1)==0:            # Look for button 1 press
                         print ("Button 1 Was Pressed:")
