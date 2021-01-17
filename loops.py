@@ -100,6 +100,7 @@ movie2 = ("/home/pi/movie/launch.mp4")
 
 def ledLOOP():
        global LEDdemo
+       global start1
        while(1):
               if LEDdemo == True:          
                      GPIO.output(LED1,True) # turn it on
@@ -145,6 +146,11 @@ def ledLOOP():
                      time.sleep(.1)
                      GPIO.output(LED1,False) # turn it on
                      time.sleep(1)
+                  
+              if start1 == True:          
+                     #GPIO.output(LED1,True) # turn it on
+                     os.system("sudo fbi -d /dev/fb0 -T 10 -t 10 /home/pi/code/spaceship/*.png")
+                     start1 = False   
                      
 def LEDblink():
        global LEDdemo2
@@ -206,13 +212,6 @@ def movie22():
        os.system("sudo fbi -d /dev/fb0 -T 10 -t 10 /home/pi/code/spaceship/*.png")
      # sudo fbi -d /dev/fb0 -T 10 -t 10 *.png (werkt vanaf console)
 
-def start():
-       global start1
-       while():
-              if start1 == True:          
-                     #GPIO.output(LED1,True) # turn it on
-                     os.system("sudo fbi -d /dev/fb0 -T 10 -t 10 /home/pi/code/spaceship/*.png")
-                     start1 = False
 
 def buttonLOOP():
         global BS1
