@@ -50,6 +50,7 @@ LED11=5
 
 LEDdemo=True
 LEDdemo2=True
+start1=True
 
 # GPIO input setup
 GPIO.setup(button1,GPIO.IN,pull_up_down=GPIO.PUD_UP) # Make button1 an input, Activate Pull UP Resistor
@@ -91,7 +92,7 @@ BS8=False
 BS9=False
 BS10=False
 BS11=False
-start1=True
+
 #BS12=False
 
 # Set movie variables
