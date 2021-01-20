@@ -304,7 +304,7 @@ def buttonLOOP():
                                 BS3=False               # Set Flag to show LED3 is now Off
                                 sleep(.5)
                                    
-                 if GPIO.input(button5)==0:            # Look for button 1 press
+                if GPIO.input(button5)==0:            # Look for button 1 press
                         print ("Button 5 Was Pressed:")
                         if BS5==False:                # If the LED is off
                                 GPIO.output(LED5,True) # turn it on
@@ -316,7 +316,7 @@ def buttonLOOP():
                                 BS5=False               # Set Flag to show LED3 is now Off
                                 sleep(.5)
                                    
-                 if GPIO.input(button7)==0:            # Look for button 1 press
+                if GPIO.input(button7)==0:            # Look for button 1 press
                         print ("Button 7 Was Pressed:")
                         if BS7==False:                # If the LED is off
                                 GPIO.output(LED7,True) # turn it on
@@ -328,7 +328,7 @@ def buttonLOOP():
                                 BS7=False               # Set Flag to show LED3 is now Off
                                 sleep(.5)
 
-                 if GPIO.input(button9)==0:            # Look for button 1 press
+                if GPIO.input(button9)==0:            # Look for button 1 press
                         print ("Button 9 Was Pressed:")
                         if BS9==False:                # If the LED is off
                                 GPIO.output(LED9,True) # turn it on
