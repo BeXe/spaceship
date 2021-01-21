@@ -99,7 +99,7 @@ BS11=False
 movie1 = ("/home/pi/movie/aurora.mp4")
 movie2 = ("/home/pi/movie/launch.mp4")
 movie3 = ("/home/pi/movie/landing1.mp4")
-movie4 = ("/home/pi/movie/landing2.mp4")
+movie4 = ("/home/pi/movie/landing22.mp4")
 movie5 = ("/home/pi/movie/moonwalk.mp4")
 
 sound1 = ("/home/pi/sounds/junk.mp3")
