@@ -105,6 +105,8 @@ movie5 = ("/home/pi/movie/moonwalk.mp4")
 sound1 = ("/home/pi/sounds/junk.mp3")
 sound2 = ("/home/pi/sounds/whoosh.mp3")
 sound3 = ("/home/pi/sounds/alarm.mp3")
+sound4 = ("/home/pi/sounds/laser.mp3")
+sound5 = ("/home/pi/sounds/move.mp3")
 
 def ledLOOP():
        global LEDdemo
@@ -259,6 +261,17 @@ def sound33():
        omxc = Popen(['omxplayer', '-b', sound3])
        os.system("sudo fbi -d /dev/fb0 -T 10 -t 10 /home/pi/code/spaceship/*.png")      
 
+def sound44():
+       os.system("sudo killall -9 fbi")
+       os.system('killall omxplayer.bin')
+       omxc = Popen(['omxplayer', '-b', sound4])
+       os.system("sudo fbi -d /dev/fb0 -T 10 -t 10 /home/pi/code/spaceship/*.png")
+
+def sound55():
+       os.system("sudo killall -9 fbi")
+       os.system('killall omxplayer.bin')
+       omxc = Popen(['omxplayer', '-b', sound5])
+       os.system("sudo fbi -d /dev/fb0 -T 10 -t 10 /home/pi/code/spaceship/*.png")       
 
 def buttonLOOP():
         global BS1
@@ -323,7 +336,7 @@ def buttonLOOP():
                                 GPIO.output(LED3,True) # turn it on
                                 BS3=True              # Set Flag to show LED3 is now On 
                                 time.sleep(.5)             # Delay
-                                sound11()                        
+                                sound44()                        
                         else:                         # If the LED is on
                                 GPIO.output(LED3,False) # Turn LED off
                                 BS3=False               # Set Flag to show LED3 is now Off
@@ -377,6 +390,18 @@ def buttonLOOP():
                                 BS7=False               # Set Flag to show LED3 is now Off
                                 sleep(.5)
 
+                if GPIO.input(button8)==0:            # Look for button 1 press
+                        print ("Button 8 Was Pressed:")
+                        if BS8==False:                # If the LED is off
+                                GPIO.output(LED8,True) # turn it on
+                                BS8=True              # Set Flag to show LED3 is now On 
+                                time.sleep(.5)             # Delay
+                                sound55()
+                        else:                         # If the LED is on
+                                GPIO.output(LED8,False) # Turn LED off
+                                BS8=False               # Set Flag to show LED3 is now Off
+                                sleep(.5)
+                                   
                 if GPIO.input(button9)==0:            # Look for button 1 press
                         print ("Button 9 Was Pressed:")
                         if BS9==False:                # If the LED is off
