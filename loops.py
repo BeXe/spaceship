@@ -290,6 +290,7 @@ def buttonLOOP():
         global LEDdemo
         global LEDdemo2
         global BS11
+        global BS12
         global start1
         while(1):                  # Create an infinite Loop
                 if GPIO.input(button1)==0:            # Look for button 1 press
@@ -415,7 +416,19 @@ def buttonLOOP():
                         else:                         # If the LED is on
                                 GPIO.output(LED9,False) # Turn LED off
                                 BS9=False               # Set Flag to show LED3 is now Off
-                                sleep(.5)                   
+                                sleep(.5)
+                                   
+                if GPIO.input(button12)==0:            # Look for button 1 press
+                        print ("Button 12 Was Pressed:")
+                        if BS12==False:                # If the LED is off
+                                GPIO.output(LED12,True) # turn it on
+                                BS12=True              # Set Flag to show LED3 is now On 
+                                time.sleep(.5)             # Delay
+                                movie55()
+                        else:                         # If the LED is on
+                                GPIO.output(LED12,False) # Turn LED off
+                                BS9=False               # Set Flag to show LED3 is now Off
+                                sleep(.5)                                  
                                 
 def buttonLOOP2():
         global BS1
