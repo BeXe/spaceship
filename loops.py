@@ -32,7 +32,7 @@ button8=1
 button9=20
 button10=16
 button11=21
-#button12=
+button12=12
 
 # Led variables, connected tot which GPIO pin
 LED1=24
@@ -46,7 +46,7 @@ LED8=17
 LED9=13
 LED10=6
 LED11=5
-#LED12=
+LED12=10
 
 LEDdemo=True
 LEDdemo2=True
@@ -64,7 +64,7 @@ GPIO.setup(button8,GPIO.IN,pull_up_down=GPIO.PUD_UP) # Make button 8 an input, A
 GPIO.setup(button9,GPIO.IN,pull_up_down=GPIO.PUD_UP) # Make button 9 an input, Activate Pull UP Resistor
 GPIO.setup(button10,GPIO.IN,pull_up_down=GPIO.PUD_UP) # Make button 10 an input, Activate Pull Up Resistor
 GPIO.setup(button11,GPIO.IN,pull_up_down=GPIO.PUD_UP) # Make button 11 an input, Activate Pull UP Resistor
-#GPIO.setup(button12,GPIO.IN,pull_up_down=GPIO.PUD_UP) # Make button 12 an input, Activate Pull Up Resistor
+GPIO.setup(button12,GPIO.IN,pull_up_down=GPIO.PUD_UP) # Make button 12 an input, Activate Pull Up Resistor
 
 # GPIO output setup
 GPIO.setup(LED1,GPIO.OUT,) # Make LED 1 an Output
@@ -78,7 +78,7 @@ GPIO.setup(LED8,GPIO.OUT,)  # Make LED 8 an Output
 GPIO.setup(LED9,GPIO.OUT,) # Make LED 9 an Output
 GPIO.setup(LED10,GPIO.OUT,)  # Make LED 10 an Output
 GPIO.setup(LED11,GPIO.OUT) # Make LED 11 an Output
-#GPIO.setup(LED12,GPIO.OUT)  # Make LED 12 an Output
+GPIO.setup(LED12,GPIO.OUT)  # Make LED 12 an Output
 
 # Set Flags to indicate LED is initially off
 BS1=False
@@ -92,8 +92,7 @@ BS8=False
 BS9=False
 BS10=False
 BS11=False
-
-#BS12=False
+BS12=False
 
 # Set movie variables
 movie1 = ("/home/pi/movie/aurora.mp4")
@@ -132,8 +131,12 @@ def ledLOOP():
                      GPIO.output(LED10,True) # turn it on
                      time.sleep(.1)
                      GPIO.output(LED11,True) # turn it on
-                     time.sleep(1)
-                        
+                     time.sleep(.1)
+                     GPIO.output(LED12,True) # turn it on
+                     time.sleep(2)
+                     
+                     GPIO.output(LED12,False) # turn it on
+                     time.sleep(1)   
                      GPIO.output(LED11,False) # turn it on
                      time.sleep(.1)
                      GPIO.output(LED10,False) # turn it on
