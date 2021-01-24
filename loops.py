@@ -427,7 +427,7 @@ def buttonLOOP():
                                 movie55()
                         else:                         # If the LED is on
                                 GPIO.output(LED12,False) # Turn LED off
-                                BS9=False               # Set Flag to show LED3 is now Off
+                                BS12=False               # Set Flag to show LED3 is now Off
                                 sleep(.5)                                  
                                 
 def buttonLOOP2():
